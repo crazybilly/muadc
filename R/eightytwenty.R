@@ -9,6 +9,7 @@
 #'    \item p.t - the percentage of total value (ie. the "80")
 #'    \item p.f - the percentage of observations above (ie. the "20")
 #'    }
+#' @export
 eightytwenty <- function(x) {
   
   # grab the data from the input and create a freq table as dataframe

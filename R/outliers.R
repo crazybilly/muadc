@@ -2,6 +2,7 @@
 #' 
 #' Given a numeric vector, return the upper and lower bounds for outliers. Assumes IQR * 1.5 as bounds.
 #' @param x a numeric vector to be analysed.
+#' @export
 #' @return a list with two values:
 #' \enumerate{
 #'  \item bottom - the lower bound
