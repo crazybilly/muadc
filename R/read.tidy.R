@@ -8,9 +8,9 @@
 #' @examples
 #' read.tidy("hallp.csv",ifexist=T,"hallp")
 
-read.tidy <- function(x,ifexists=F,existsname=NA){
+read.tidy <- function(x,ifexists=F,existsname){
   if( ifexists ) {
-    if( is.na(existsname) ) {
+    if( !exists(existsname) ) {
       df <- read.csv(x,stringsAsFactors=F)
       names(df) <- gsub("\\.|,|-| |_","",names(df))
       names(df) <- tolower(names(df))
