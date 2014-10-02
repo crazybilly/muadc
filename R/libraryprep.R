@@ -7,11 +7,14 @@
 #' @param ... a character vector of futher packages to be installed and loaded
 
 
+# TODO - also you need to remove muadc.R and packages.R
 
 libraryprep <- function(xlsx=F,RMySQL=F,...)
   
+  # dplyr should move up to 0.3 by Oct 5, so this won't be necessary
 #   devtools::install_github("hadley/devtools") 
 #   devtools::install_github("hadley/dplyr")
+  # muadc isn't working b/c the require block below is borked
 #   devtools::install_github("crazybilly/muadc")
 #   
   
