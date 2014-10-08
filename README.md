@@ -13,12 +13,6 @@ Contains various variables:
 * tmuGoal - the dollar goal for Transform MU
 * afGoal - the dollar goal for the Millikin Fund
 
-## Packages Loaded
-
-* dplyr
-* plyr
-* xlsx (commented out for now--fails on Linux)
-
 ## Functions
 
 * eightytwenty - find the 80/20 cutoff in a vector
@@ -29,3 +23,4 @@ Contains various variables:
 * read.hallp - read hallp.csv, optionally looking to see if it exists
 * read.tidy - read a csv & tidy up column names, optionally looking to see if the object exists
 * write.clip - write an object to the clipboard
+* renormalize - turn a denormalized list of values back into id/value pairs
