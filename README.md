@@ -1,7 +1,7 @@
 muadc
 =====
 
-an R package with everyday functions for work at Millikin University's Alumni &amp; Development Center.
+an R package with everyday functions for my job.
 
 ## Variables
 
