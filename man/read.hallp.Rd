@@ -3,7 +3,7 @@
 \alias{read.hallp}
 \title{Read hallp.csv}
 \usage{
-read.hallp(ifexists = T, existsname)
+read.hallp(ifexists = T, existsname = "hallp")
 }
 \arguments{
 \item{ifexists}{should the function check if the object exists. Default = F}

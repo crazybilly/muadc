@@ -3,16 +3,14 @@
 \alias{read.tidy}
 \title{Read csvs into tidy format}
 \usage{
-read.tidy(x, ifexists = F, existsname, ...)
+read.tidy(x, ifexists = F, existsname)
 }
 \arguments{
 \item{x}{the filename to load. Should be a csv}
 
 \item{ifexists}{should the function check if the object exists. Default = F}
 
-\item{existsname}{what object should the function look for, assuming ifexists = T}
-
-\item{...}{other arguments to pass to read.csv}
+\item{existsname}{what object should the function look for, assuming ifexists = T. If ifexists == T and existname is not empty, the function will return the object with name = existsname.}
 }
 \description{
 This is a convience wrapper for read.csv which lowercases column names and removes punctuation. It also has an option to only read the csv if the object does not exist.
