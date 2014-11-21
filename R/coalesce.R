@@ -1,4 +1,4 @@
-#' coalesce
+#' Return non-null values 
 #' 
 #' a function, like the one in SQL, which takes arguments and returns the first non-NA value.
 #' @param ... objects to be used
