@@ -3,10 +3,10 @@
 \alias{grepnames}
 \title{Search for a string in column names}
 \usage{
-grepnames(str, x, ignorecase = T)
+grepnames(str = ".*", x, ignorecase = T, sortalpha = F)
 }
 \arguments{
-\item{str}{a regex string to find.}
+\item{str}{a regex string to find. Defaults to ".*"}
 
 \item{x}{the object to search. Expect a data frame}
 
