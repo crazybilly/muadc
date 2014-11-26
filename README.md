@@ -33,3 +33,4 @@ Contains various variables:
 ## TODO 
 * givingfactor - a function to bin giving (or wealth capacity) into various factor levels
 * startup - revise, make useful or remove
+* renormalize - lots of edge cases need to be considered
