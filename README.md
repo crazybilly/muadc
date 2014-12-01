@@ -28,6 +28,7 @@ Contains various variables:
 * renormalize - a function to renormalize (in the Bryce-Codd sense of normalization) a set of key/value pair where the value contains multiple values
 * renormalize - turn a denormalized list of values back into id/value pairs
 * startup - do various typical startup tasks. Largely useless
+* view.sample - get a quick look at data, particularly useful for very wide data frames
 * write.clip - write an object to the clipboard
 
 ## TODO 
