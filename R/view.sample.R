@@ -31,7 +31,7 @@ view.sample  <- function(x,transpose = TRUE,sample.n=3,sample.method='head',stdo
   }
   
   
-  if (output == 'stdout')  {
+  if (stdout == TRUE)  {
     z
   } else {
     View(z)
