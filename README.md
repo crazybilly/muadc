@@ -15,6 +15,7 @@ Contains various variables:
 
 ## Functions
 
+* binary.test - checks to see if a column is empty, returns a data frame of key/value pairs with a boolean factor variable
 * coalesce - an SQL-style coalesce function to return the first non-NA value in an assortment of vectors
 * eightytwenty - find the 80/20 cutoff in a vector
 * grepnames - search column names for a string

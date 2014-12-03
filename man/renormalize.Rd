@@ -3,7 +3,8 @@
 \alias{renormalize}
 \title{renormalize}
 \usage{
-renormalize(x, idcol, listcol, sep = ",", listcolname = "normalized")
+renormalize(x, idcol, listcol, sep = ",", listcolname = "normalized",
+  na.replace = "")
 }
 \arguments{
 \item{x}{a datafame to analyze}
@@ -15,6 +16,8 @@ renormalize(x, idcol, listcol, sep = ",", listcolname = "normalized")
 \item{sep}{a string describing the seperator between values in listcol. Defaults to ",".}
 
 \item{listcolname}{the name of the new column of re-normalized values. Defaults to 'normalized'.}
+
+\item{na.replace}{a string to use in place of NA values of x. Defaults to a blank string. Use NA to force renormalize() to throw errors if there are NA values in x.}
 }
 \value{
 returns a 2-column data frame. The first column is a vector of ids from the original data frame. The second column is the renormalized data.

@@ -16,7 +16,8 @@ grepnames(str = ".*", x, ignorecase = T, sortalpha = F)
 Performs a grep regex search on the column names of a data frame, returning the values and their column number.
 }
 \examples{
-grepnames("lifetimeg",hallp)
-grepnames("event",hallp,ignorecase=F)
+require(datasets)
+grepnames("mpg",mtcars)
+grepnames("MPG",mtcars,ignorecase=F)
 }
 

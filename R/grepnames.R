@@ -6,8 +6,9 @@
 #' @param ignorecase should the search ignore case. Default = T
 #' @export
 #' @examples
-#' grepnames("lifetimeg",hallp)
-#' grepnames("event",hallp,ignorecase=F)
+#' require(datasets)
+#' grepnames("mpg",mtcars)
+#' grepnames("MPG",mtcars,ignorecase=F)
 
 grepnames  <- function(str=".*",x,ignorecase=T,sortalpha=F) {
   df  <- data.frame(

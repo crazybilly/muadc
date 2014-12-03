@@ -8,7 +8,8 @@
 #'    - `head` uses head() to pull the first sample.n rows
 #'    - `sample` randomly chooses sample.n rows
 #'    - `tail` uses tail() to pull the last sample.n rows
-#' @param output a boolean value determing whether the results should be sent to R's standar output. The default value, FALSE, sends the output to RStudio's `View()` function.
+#' @param output a boolean value determing whether the results should be sent to R's standard output. The default value, FALSE, sends the output to RStudio's `View()` function.
+#' @return unless stdout==TRUE, does not return a value. Otherwise, returns the sampled data frame
 #' @export
  
 view.sample  <- function(x,transpose = TRUE,sample.n=3,sample.method='head',stdout=FALSE) {
