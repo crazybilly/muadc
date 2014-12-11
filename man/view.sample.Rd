@@ -18,12 +18,12 @@ view.sample(x, transpose = TRUE, sample.n = 3, sample.method = "head",
 - `sample` randomly chooses sample.n rows
 - `tail` uses tail() to pull the last sample.n rows}
 
-\item{output}{a boolean value determing whether the results should be sent to R's standard output. The default value, FALSE, sends the output to RStudio's `View()` function.}
+\item{stdout}{a boolean value determing whether the results should be sent to R's standard output. The default value, FALSE, sends the output to RStudio's View() function.}
 }
 \value{
 unless stdout==TRUE, does not return a value. Otherwise, returns the sampled data frame
 }
 \description{
-get a quick view of gigantic data.
+get a quick View of gigantic data, defaults to printing to RStudio's View().
 }
 

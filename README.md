@@ -36,3 +36,4 @@ Contains various variables:
 * givingfactor - a function to bin giving (or wealth capacity) into various factor levels
 * startup - revise, make useful or remove
 * renormalize - lots of edge cases need to be considered
+* something's wonky with the documentation -- package will build, but won't check. 
