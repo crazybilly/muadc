@@ -1,14 +1,33 @@
-#' Return non-null values 
-#' 
-#' a function, like the one in SQL, which takes arguments and returns the first non-NA value.
-#' @param ... objects to be used
-#' @return returns an object with the length of the first argument. Elements are not recycled.
+#' @title Replaces NA values
+#' @description This (vectorized) function returns the first 
+#'   non-\code{NA} argument, similar to the SQL function 
+#'   \code{COALESCE}. If a vector or matrix is passed as first argument,
+#'   the remaining arguments are recycled to generate a vector/matrix of
+#'   the same dimension, and coalescing is done element by element.
+#'   Taken from krlmlr's [misc package](https://github.com/krlmlr/kimisc), referenced at [StackOverflow](http://stackoverflow.com/questions/19253820/how-to-implement-coalesce-efficiently-in-r).
+#' @param x The first value to coalesce.
+#' @param ... Other values to coalesce.
+#' @return A vector of the same length as \code{x}.
+#' @examples
+#' coalesce.na(NA, -1)
+#' coalesce.na(5, 3)
+#' coalesce.na(c(1,NA,NA), c(NA,2))
+#' coalesce.na(matrix(c(NA, 1:3), nrow=2))
+#' coalesce.na(NA)
 #' @export
-coalesce<-function(...){
-  Reduce(function(x,y) {
-    i<-which(is.na(x))
-    x[i]<-y[i]
-    x
-  },
-  list(...))
+coalesce <- function(x, ...) {
+  x.len <- length(x)
+  ly <- list(...)
+  for (y in ly) {
+    y.len <- length(y)
+    if (y.len == 1) {
+      x[is.na(x)] <- y
+    } else {
+      if (x.len %% y.len != 0)
+        warning('object length is not a multiple of first object length')
+      pos <- which(is.na(x))
+      x[pos] <- y[(pos - 1) %% y.len + 1]
+    }
+  }
+  x
 }
