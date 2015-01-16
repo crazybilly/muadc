@@ -1,3 +1,7 @@
 
 # Various and asundry aliases
-view  <- View
+  # ideas from http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile
+v  <- View
+h <- head
+cd <- setwd
+s <- summary
