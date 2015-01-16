@@ -13,6 +13,17 @@ Contains various variables:
 * tmuGoal - the dollar goal for Transform MU
 * afGoal - the dollar goal for the Millikin Fund
 
+
+## Aliases
+
+Contains the following aliases, primarily for interactive use:
+
+* v - View()
+* h - head()
+* s - summary()
+* cd - setwd()
+
+
 ## Functions
 
 * binary.test - checks to see if a column is empty, returns a data frame of key/value pairs with a boolean factor variable
