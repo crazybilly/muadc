@@ -1,7 +1,6 @@
 #' @title Replaces NA values
-#' @description This (vectorized) function returns the first 
-#'   non-\code{NA} argument, similar to the SQL function 
-#'   \code{COALESCE}. If a vector or matrix is passed as first argument,
+#' @description Returns the first non-NA argument, similar to the SQL function 
+#'   coalesce. If a vector or matrix is passed as first argument,
 #'   the remaining arguments are recycled to generate a vector/matrix of
 #'   the same dimension, and coalescing is done element by element.
 #'   Taken from krlmlr's [misc package](https://github.com/krlmlr/kimisc), referenced at [StackOverflow](http://stackoverflow.com/questions/19253820/how-to-implement-coalesce-efficiently-in-r).
