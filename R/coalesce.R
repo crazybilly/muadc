@@ -6,13 +6,7 @@
 #'   Taken from krlmlr's [misc package](https://github.com/krlmlr/kimisc), referenced at [StackOverflow](http://stackoverflow.com/questions/19253820/how-to-implement-coalesce-efficiently-in-r).
 #' @param x The first value to coalesce.
 #' @param ... Other values to coalesce.
-#' @return A vector of the same length as \code{x}.
-#' @examples
-#' coalesce.na(NA, -1)
-#' coalesce.na(5, 3)
-#' coalesce.na(c(1,NA,NA), c(NA,2))
-#' coalesce.na(matrix(c(NA, 1:3), nrow=2))
-#' coalesce.na(NA)
+#' @return A vector of the same length as {x}.
 #' @export
 coalesce <- function(x, ...) {
   x.len <- length(x)

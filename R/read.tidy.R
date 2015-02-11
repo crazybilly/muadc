@@ -6,17 +6,17 @@
 #' @param existsname what object should the function look for, assuming ifexists = T. If ifexists == T and existname is not empty, the function will return the object with name = existsname.
 #' @param ... additional parameters to pass to read.csv
 #' @export 
-#' @examples
-#' read.tidy("hallp.csv",ifexist=T,"hallp")
 
 read.tidy <- function(x,ifexists=F,existsname,...){
+  
+  df  <- NULL
+  
   if( ifexists ) {
     if( !exists(existsname) ) {
       df <- read.csv(x,stringsAsFactors=F,...)
       names(df) <- gsub("\\.|,|-| |_","",names(df))
       names(df) <- tolower(names(df))
       
-      return(df)
     } else { get(existsname) }
   }
   else {
@@ -24,7 +24,14 @@ read.tidy <- function(x,ifexists=F,existsname,...){
     names(df) <- gsub("\\.|,|-| |_","",names(df))
     names(df) <- tolower(names(df))
     
-    return(df)
   }
+  
+  # if dplyr's already loaded, make the table a dplyr data_frame
+  #   if not, don't worry about it--it's only cosmetic anyway
+  if ("package:dplyr" %in% search() ) {
+    df  <- dplyr::tbl_df(df)
+  }
+  
+  df
   
 }

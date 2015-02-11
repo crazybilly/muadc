@@ -5,3 +5,4 @@ v  <- View
 h <- head
 cd <- setwd
 s <- summary
+librarY  <- library

@@ -7,7 +7,6 @@
 #' @param na the string to use for missing values in the data.
 #' @param ... other values to be passed to write.csv
 #' @export
-#' 
 write.tidy  <- function(x, file = "", row.names = FALSE, na = "", ... ) {
-  write.csv(x,file,row.names=row.names,na=na,...)
+  write.csv(x, file, row.names=row.names, na=na, ... )
 }

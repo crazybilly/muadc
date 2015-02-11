@@ -5,10 +5,6 @@
 #' @param x the object to search. Expect a data frame
 #' @param ignorecase should the search ignore case. Default = T
 #' @export
-#' @examples
-#' require(datasets)
-#' grepnames("mpg",mtcars)
-#' grepnames("MPG",mtcars,ignorecase=F)
 
 grepnames  <- function(str=".*",x,ignorecase=T,sortalpha=F) {
   df  <- data.frame(

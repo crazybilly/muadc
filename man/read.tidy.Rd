@@ -18,7 +18,4 @@ read.tidy(x, ifexists = F, existsname, ...)
 \description{
 This is a convience wrapper for read.csv which lowercases column names and removes punctuation. It also has an option to only read the csv if the object does not exist.
 }
-\examples{
-read.tidy("hallp.csv",ifexist=T,"hallp")
-}
 

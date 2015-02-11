@@ -12,21 +12,13 @@ coalesce(x, ...)
 \item{...}{Other values to coalesce.}
 }
 \value{
-A vector of the same length as \code{x}.
+A vector of the same length as {x}.
 }
 \description{
-This (vectorized) function returns the first
-  non-\code{NA} argument, similar to the SQL function
-  \code{COALESCE}. If a vector or matrix is passed as first argument,
+Returns the first non-NA argument, similar to the SQL function
+  coalesce. If a vector or matrix is passed as first argument,
   the remaining arguments are recycled to generate a vector/matrix of
   the same dimension, and coalescing is done element by element.
   Taken from krlmlr's [misc package](https://github.com/krlmlr/kimisc), referenced at [StackOverflow](http://stackoverflow.com/questions/19253820/how-to-implement-coalesce-efficiently-in-r).
-}
-\examples{
-coalesce.na(NA, -1)
-coalesce.na(5, 3)
-coalesce.na(c(1,NA,NA), c(NA,2))
-coalesce.na(matrix(c(NA, 1:3), nrow=2))
-coalesce.na(NA)
 }
 
