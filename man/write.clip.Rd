@@ -13,7 +13,7 @@ write.clip(x, sep = "\\t", na = "", ...)
 
 \item{...}{other arguments to pass to write.table()}
 
-\item{sepr}{a string to seperate columns, passed to write.table as sep=sepr. Defaults to \t, ie. tab-seperated columns.}
+\item{sepr}{a string to seperate columns, passed to write.table as sep=sepr. Defaults to tab-seperated columns.}
 }
 \description{
 A convience wrapper for write.table that writes tab-seperated data to the Windows clipboard. Does not work in *nix.
