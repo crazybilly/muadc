@@ -15,6 +15,9 @@ read.tidy(x, ifexists = F, existsname, ...)
 
 \item{...}{additional parameters to pass to read.csv}
 }
+\value{
+Returns a data frame will lower cased names and all punctuation removed. If dplyr is already loaded, it returns a data frame as a tbl_df--otherwise, it returns a simple data frame.
+}
 \description{
 This is a convience wrapper for read.csv which lowercases column names and removes punctuation. It also has an option to only read the csv if the object does not exist.
 }

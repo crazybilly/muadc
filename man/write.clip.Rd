@@ -4,12 +4,16 @@
 \alias{write.clip}
 \title{Write data to the clipboard}
 \usage{
-write.clip(x, sep = "\\t", na = "", ...)
+write.clip(x, size = "4096", sep = "\\t", na = "", row.names = F, ...)
 }
 \arguments{
 \item{x}{an object to write}
 
+\item{size}{the file size to use for the clipboard. Defaults to 4096 which is reasonably large.}
+
 \item{na}{the string to replace NA values. Defaults to "".}
+
+\item{row.names}{a boolean values determining whether  row names be written to the file. Defaults to FALSE.}
 
 \item{...}{other arguments to pass to write.table()}
 

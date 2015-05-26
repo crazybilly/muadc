@@ -2,7 +2,7 @@
 % Please edit documentation in R/coalesce.R
 \name{coalesce}
 \alias{coalesce}
-\title{Replaces NA values}
+\title{Replace NA values}
 \usage{
 coalesce(x, ...)
 }

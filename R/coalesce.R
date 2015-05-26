@@ -1,4 +1,4 @@
-#' @title Replaces NA values
+#' @title Replace NA values
 #' @description Returns the first non-NA argument, similar to the SQL function 
 #'   coalesce. If a vector or matrix is passed as first argument,
 #'   the remaining arguments are recycled to generate a vector/matrix of
