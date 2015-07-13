@@ -5,6 +5,7 @@
 #' 
 #' @return Assigns a database connection, plus connections to the hallp commits, gifts, pledges and memos tables in the global environment.
 #' @importFrom dplyr src_mysql
+#' @importFrom magrittr %>% 
 #' @importFrom dplyr tbl
 #' @export
 initcommitsdb  <- function(db = 'commits') {
