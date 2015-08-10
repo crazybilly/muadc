@@ -4,7 +4,10 @@
 \alias{initcommitsdb}
 \title{Initialize my db connection}
 \usage{
-initcommitsdb()
+initcommitsdb(db = "commits")
+}
+\arguments{
+\item{db}{a string of the name of the database name with which you should connect. Defaults to the 'commits' db.}
 }
 \value{
 Assigns a database connection, plus connections to the hallp commits, gifts, pledges and memos tables in the global environment.

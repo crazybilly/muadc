@@ -7,7 +7,7 @@
 
 clean.df <- function(df) {
   
-  names(df) <- gsub("\\.|,|-| |_","",names(df))
+  names(df) <- gsub("\\.|,|-| |_|\\/","",names(df))
   names(df) <- tolower(names(df))
   
   # if dplyr's already loaded, make the table a dplyr data_frame
