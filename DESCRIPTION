@@ -8,3 +8,6 @@ Maintainer: Jake Tolbert <crazybilly@gmail.com>
 Description: A collection of functions and variables for day to day work in
     Millikin University's Alumni & Development Center
 License: GPL 2 or higher
+Imports:
+  dplyr,
+  magrittr

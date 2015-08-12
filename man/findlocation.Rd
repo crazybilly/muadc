@@ -17,4 +17,5 @@ returns a single integer value, the index of the first column that matches match
 \description{
 Finds, within a data frame's columns, the first match for a series of regexp. Also send messages to the user to let them know what we matched on. Used within prepformatch().
 }
+\keyword{internal}
 
