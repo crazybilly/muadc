@@ -3,6 +3,7 @@
 S3method(as.data.frame,named.vector)
 export(as.currency)
 export(binary.test)
+export(clean.df)
 export(coalesce)
 export(eightytwenty)
 export(grepnames)

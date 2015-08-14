@@ -1,6 +1,7 @@
-currentFY  <- 2015
+assign('currentFY', 2015, envir = muadcEnv)
 #figure out how to calculate these
-fyStartDate  <- as.Date("2015-07-01")
-fyEndDate	 <- as.Date("2016-06-30")
-tmuGoal  <- 85000000
-afGoal	<-  2500000
+assign('fyStartDate', as.Date("2015-07-01"), envir = muadcEnv)
+assign('fyEndDate	', as.Date("2016-06-30"), envir = muadcEnv)
+assign('tmuGoal', 85000000, envir = muadcEnv)
+assign('afGoal',  2500000, envir = muadcEnv)
+

@@ -4,6 +4,7 @@
 #' 
 #' @param df a data frame 
 #' @return a data frame, or if dplyr is available, a tbl_df. 
+#' @export
 
 clean.df <- function(df) {
   
