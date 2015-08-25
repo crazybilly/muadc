@@ -18,7 +18,7 @@ initcommitsdb  <- function(db = 'commits') {
     giftstbl   <- commitsdb  %>% dplyr::tbl("gifts")
     pledgestbl <- commitsdb  %>% dplyr::tbl("pledges")
     memostbl   <- commitsdb  %>% dplyr::tbl("memos")
-    hallp      <- commitsdb  %>% dplyr::tbl("hallp")
+    hallptbl   <- commitsdb  %>% dplyr::tbl("hallp")
     
     # assign the tables (and the database connection) 
     #  in the global environment
@@ -28,7 +28,7 @@ initcommitsdb  <- function(db = 'commits') {
     assign("giftstbl",  giftstbl,  env=globalenv())
     assign("pledgestbl",pledgestbl,env=globalenv())
     assign("memostbl",  memostbl,  env=globalenv())
-    assign("hallptbl",  hallp,     env=globalenv())
+    assign("hallptbl",  hallptbl,  env=globalenv())
     
   
 }

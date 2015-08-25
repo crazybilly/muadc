@@ -10,7 +10,7 @@
 
 
 
-as.data.frame.named.vector <- function(x,valname=deparse(substitute(x))) {
+as.data.frame_named.vector <- function(x,valname=deparse(substitute(x))) {
   
   
   names <- names(x)
