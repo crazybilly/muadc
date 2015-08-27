@@ -14,6 +14,7 @@ grepnames  <- function(str=".*",x,ignorecase=T,sortalpha=F) {
       , index = grep(  str
             , names(x)
             ,ignore.case = T,value = F)
+      , stringsAsFactors = F
   )
   #names(df)  <- c("index")
   
