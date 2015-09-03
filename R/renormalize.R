@@ -7,7 +7,7 @@
 #' @param sep a string describing the seperator between values in listcol. Defaults to ",".
 #' @param listcolname the name of the new column of re-normalized values. Defaults to 'normalized'.
 #' @param na.replace a string to use in place of NA values of x. Defaults to a blank string. 
-#' @return returns a 2-column data frame. The first column is a vector of ids from the original data frame. The second column is the renormalized data.
+#' @return returns a 2-column data frame. The first column is a vector of ids from the original data frame. The second column is the renormalized data. Rows from x where listcol is NA are removed.
 #' @export
 
 renormalize  <- function (x,idcol,listcol,sep=",",listcolname='normalized',na.replace = ""){
@@ -17,25 +17,32 @@ renormalize  <- function (x,idcol,listcol,sep=",",listcolname='normalized',na.re
   #     2. when x$listcol is not a character, strplit bombs out
   #     3. there MIGHT be some coercion problems, too
   
+  # remove rows where is.na(listcol)
+  x  <- x[!is.na(x[[listcol]]),]
   
-  idcoldata  <-  x[,idcol]
-  listcoldata  <-  x[,listcol]
+  idcoldata  <-  x[[idcol]]
+  listcoldata  <-  x[[listcol]]
   
+  # coerce listcol to character
   listcoldata  <- as.character(listcoldata)
+  
+  
+ # replace NA values (introduced via coercion) with empty strings.
     nasinlist  <- sum(is.na(listcoldata))
     if(nasinlist > 0) {
         warning(paste('listcol contains', nasinlist, 'NA values. Converting these values to empty strings...'))
     }
-  listcoldata[is.na(listcoldata)]  <- na.replace
+    listcoldata[is.na(listcoldata)]  <- na.replace
   
   
-  
-  
+ # split the data on the delimiter 
   collist  <- strsplit(listcoldata,sep)
-  normalizedlist <- data.frame(id = rep(idcoldata, sapply(collist, length)), item = unlist(collist))
   
-  names(normalizedlist)  <- c(idcol,listcolname)
+  # pull data into a new, normalized data fram
+  normalizedlist <- data.frame('id' = rep(idcoldata, sapply(collist, length)), 'item' = unlist(collist), stringsAsFactors = F )
   
-  return(normalizedlist)
+  # rename the list columns of the new data frame and return it
+  setNames(normalizedlist,  c(idcol,listcolname) )
+   
   
 }

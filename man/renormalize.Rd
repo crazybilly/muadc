@@ -21,7 +21,7 @@ renormalize(x, idcol, listcol, sep = ",", listcolname = "normalized",
 \item{na.replace}{a string to use in place of NA values of x. Defaults to a blank string.}
 }
 \value{
-returns a 2-column data frame. The first column is a vector of ids from the original data frame. The second column is the renormalized data.
+returns a 2-column data frame. The first column is a vector of ids from the original data frame. The second column is the renormalized data. Rows from x where listcol is NA are removed.
 }
 \description{
 renormalize a denormalized list into a Boyce-Codd style data frame suitable for relational databases.
