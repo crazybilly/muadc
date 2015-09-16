@@ -12,6 +12,7 @@
 #' @param zip  a reference to the zip code column
 #' @param sep  a string to be used to seperate the columns
 #' @return returns the 4 columns pasted together
+#' @export
 
 catadd <- function( addr = addr1, city = city, st = st, zip = zip, sep = ' ' ) {
   paste(addr,city,st,zip, sep = sep)
@@ -22,6 +23,7 @@ catadd <- function( addr = addr1, city = city, st = st, zip = zip, sep = ' ' ) {
 #' @description returns a vector of counts for a vector. Uses table() to calculate counts. Primarily for use in dplyr:;mutate().
 #' @param col a referece to the column to be counted. 
 #' @return a integer vector of counts for each value in col.
+#' @export
 
 countif  <- function( col  ) {
   table(col)[col]  %>% as.integer()
