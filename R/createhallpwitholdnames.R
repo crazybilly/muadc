@@ -17,7 +17,8 @@ createhallpwitholdnames <- function() {
     collect  %>% 
     names  %>% 
     data.frame( current = . , stringsAsFactors = F)  %>% 
-    left_join( oldhallpnames %>% select(newname, oldname), by = c('current' = 'newname'))
+    left_join( oldhallpnames %>% select(newname, oldname), by = c('current' = 'newname'))  %>% 
+    mutate(oldname = ifelse(is.na(oldname),current,oldname) )
   
   hallpwitholdnames  <- hallptbl %>% 
     collect  %>% 
