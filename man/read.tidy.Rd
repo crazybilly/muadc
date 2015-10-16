@@ -4,10 +4,10 @@
 \alias{read.tidy}
 \title{Read csvs into tidy format}
 \usage{
-read.tidy(x, ifexists = F, existsname, ...)
+read.tidy(x = "clipboard", ifexists = F, existsname, ...)
 }
 \arguments{
-\item{x}{the filename to load. Should be a csv}
+\item{x}{the filename to load. Should be a csv. Defaults to reading from the clipboard.}
 
 \item{ifexists}{should the function check if the object exists. Default = F}
 
