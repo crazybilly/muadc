@@ -12,7 +12,7 @@
 #'
 #' @return a data frame filtered for a traditional mailing. If prefemail, deceased, primdnrind or excl don't already exist in df, they wil be added
 #' @export
-#'
+ 
 apply.email.exclusions  <- function(df,  idcol = 'pidm', primary.only = F, include.students = F, sol = F, exclude.fall = F, exclude.spring = F) {
   
   

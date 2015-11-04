@@ -10,7 +10,8 @@ Description: A collection of functions and variables for day to day work in
 License: GPL 2 or higher
 LazyData: true
 Imports:
-  dplyr,
-  magrittr,
-  lazyeval,
-  ggthemr
+    dplyr,
+    magrittr,
+    lazyeval,
+    ggthemr
+RoxygenNote: 5.0.0

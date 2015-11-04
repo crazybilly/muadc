@@ -98,13 +98,13 @@ buildlongxref  <- function( ... , calculateCH = T ) {
 #' @description builds a table showing what relationships each individual in a data frame has with others in the same data frame. Used by dupstatus().
 #' @param df a data frame to work on with one line per constituent with one pidm column.
 #' @param idcol a string naming the pidm column
-#' @param xrefslong an object reference to a data frame built by buildlongxref() on the same data. If NA, this is generated from data/xaxref-pa.csv and data/xaxref-si.csv.
+#' @param xrefslong an object reference to a data frame built by buildlongxref() on the same data. If NULL, this is generated from data/xaxref-pa.csv and data/xaxref-si.csv.
 #' @return a data frame with one row per person who has any relationship to someone else in the database. Constituents who are not related to anyone else are removed.
 
-getrelationships  <- function(df, idcol = 'pidm', xrefslong = NA ) {
+getrelationships  <- function(df, idcol = 'pidm', xrefslong = NULL ) {
   
   
-  if( is.na(xrefslong) ) {
+  if( is.null(xrefslong) ) {
     xrefslong  <- buildlongxref('G:/ALUMNI/Jake T/datawarehouse/data/xaxref-pa.csv','G:/ALUMNI/Jake T/datawarehouse/data/xaxref-si.csv')
   }
   
@@ -154,7 +154,7 @@ getrelationships  <- function(df, idcol = 'pidm', xrefslong = NA ) {
 #'    }
 #'    
 #' @export
-#' 
+ 
 dupstatus  <- function(df, dfxrefs = NA, xrefslong = NA  ) { 
   
   if( is.na(dfxrefs) ) {
@@ -165,7 +165,7 @@ dupstatus  <- function(df, dfxrefs = NA, xrefslong = NA  ) {
   segmentcol  <- lazy(segmentcol)
   
   
-  df2  <- df  %>% 
+  df  %>% 
     left_join(dfxrefs, by = 'pidm')  %>% 
     mutate(
       cataddr = catadd(addr1,city,st,zip)

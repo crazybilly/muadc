@@ -2,7 +2,7 @@
 #'
 #' @description Creates a ggthemr theme based on the Millikin University pallette and applies it to all ggplots.
 #' @export
-#'
+
 ggmutheme  <- function() {
   
   
