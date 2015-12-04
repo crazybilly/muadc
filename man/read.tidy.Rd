@@ -4,10 +4,12 @@
 \alias{read.tidy}
 \title{Read csvs into tidy format}
 \usage{
-read.tidy(x = "clipboard", ifexists = F, existsname, ...)
+read.tidy(x = "clipboard", sep = "\\t", ifexists = F, existsname, ...)
 }
 \arguments{
 \item{x}{the filename to load. Should be a csv. Defaults to reading from the clipboard.}
+
+\item{sep}{the field separator character. If x == 'clipboard', sep defaults '\t'--otherwise, it defaults to ',' to read csv data.}
 
 \item{ifexists}{should the function check if the object exists. Default = F}
 
