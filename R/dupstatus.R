@@ -20,7 +20,7 @@ catadd <- function( addr = addr1, city = city, st = st, zip = zip, sep = ' ' ) {
 
 #' @title Countif
 #' 
-#' @description returns a vector of counts for a vector. Uses table() to calculate counts. Primarily for use in dplyr:;mutate().
+#' @description returns a vector of counts for a vector. Uses table() to calculate counts. Primarily for use in dplyr::mutate().
 #' @param col a referece to the column to be counted. 
 #' @return a integer vector of counts for each value in col.
 #' @export
