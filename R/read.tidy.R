@@ -1,6 +1,6 @@
 #' Read csvs into tidy format
 #'
-#' This is a convience wrapper for read.csv which lowercases column names and removes punctuation. It also has an option to only read the csv if the object does not exist. 
+#' This is a convenience wrapper for read.csv which lowercases column names and removes punctuation. It also has an option to only read the csv if the object does not exist. 
 #' 
 #' @param x the filename to load. Should be a csv. Defaults to reading from the clipboard.
 #' @param sep the field separator character. If x == 'clipboard', sep defaults to tab seperated files. Otherwise, it defaults to ',' to read csv data.
