@@ -9,7 +9,7 @@ read.tidy(x = "clipboard", sep = "\\t", ifexists = F, existsname, ...)
 \arguments{
 \item{x}{the filename to load. Should be a csv. Defaults to reading from the clipboard.}
 
-\item{sep}{the field separator character. If x == 'clipboard', sep defaults '\t'--otherwise, it defaults to ',' to read csv data.}
+\item{sep}{the field separator character. If x == 'clipboard', sep defaults to tab seperated files. Otherwise, it defaults to ',' to read csv data.}
 
 \item{ifexists}{should the function check if the object exists. Default = F}
 

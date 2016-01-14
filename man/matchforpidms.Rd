@@ -24,6 +24,6 @@ Matching is performed on the following fields, in this order:
       \item lastname, first initial
       \item lastname, address (only the first 70\% of the adddress is used)
    }
-   In all cases, matches are only made when one match is possible. Also, all text fields are set to lowercase and punctuation is removed.
+   In all cases, matches are only made when one match is possible. Also, all text fields are set to lowercase and punctuation is removed. Note that missing data currently throws an error--if any columns are missing, we recommend adding a column with all NA values.
 }
 

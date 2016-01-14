@@ -13,6 +13,6 @@ countif(col)
 a integer vector of counts for each value in col.
 }
 \description{
-returns a vector of counts for a vector. Uses table() to calculate counts. Primarily for use in dplyr:;mutate().
+returns a vector of counts for a vector. Uses table() to calculate counts. Primarily for use in dplyr::mutate().
 }
 
