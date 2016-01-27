@@ -13,7 +13,7 @@
 eightytwenty <- function(x) {
   
     # set x in ascending order, and cumulative total
-    df <- data.frame( x = x[order(x)], cumtotal = cumsum(x))
+    df <- data.frame( x = x[order(x)], cumtotal = cumsum(x[order(x)]))
     
     #set rownum
     df$rownum <- 1:length(x)

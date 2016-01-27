@@ -12,9 +12,9 @@ eightytwenty(x)
 \value{
 a data frame with the following columns:
  \enumerate{
-   \item x - the cutoff value
-   \item p.t - the percentage of total value (ie. the "80")
-   \item p.f - the percentage of observations above (ie. the "20")
+   \item cutoff - the cutoff value
+   \item perc_of_total_x - the percentage of total value (ie. the "80")
+   \item perc_of_rows  - the percentage of observations above the cutoff (ie. the "20")
    }
 }
 \description{
