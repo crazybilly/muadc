@@ -11,7 +11,7 @@
 count.na  <- function(x) {
   classx  <- class(x)
   
-  if( grepl('data.frame', class(x) ) ) {
+  if( any(grepl('data.frame', class(x)) ) ) {
     
     nacounts  <- sapply(x, function(y) {
                   sum(is.na(y))
