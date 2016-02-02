@@ -25,6 +25,7 @@ as.data.frame_named.vector <- function(x,valname=deparse(substitute(x))) {
   df  <- data.frame( 
         names = names
       , val   = x
+      , stringsAsFactors = F
     )
   
   if ("package:dplyr" %in% search() ) {
