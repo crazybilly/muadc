@@ -12,6 +12,5 @@ LazyData: true
 Imports:
     dplyr,
     magrittr,
-    lazyeval,
-    ggthemr
+    lazyeval
 RoxygenNote: 5.0.1
