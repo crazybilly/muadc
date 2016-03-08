@@ -4,10 +4,12 @@
 \alias{initcommitsdb}
 \title{Initialize my db connection}
 \usage{
-initcommitsdb(db = "commits")
+initcommitsdb(db = "commits", ...)
 }
 \arguments{
 \item{db}{a string of the name of the database name with which you should connect. Defaults to the 'commits' db.}
+
+\item{...}{further arguments to pass to dplyr::src_mysql}
 }
 \value{
 Assigns a database connection, plus connections to the hallp commits, gifts, pledges and memos tables in the global environment.

@@ -2,16 +2,17 @@
 #' 
 #' a convinence function to connect to the commits database on localhost. 
 #' @param db a string of the name of the database name with which you should connect. Defaults to the 'commits' db.
+#' @param ... further arguments to pass to dplyr::src_mysql
 #' 
 #' @return Assigns a database connection, plus connections to the hallp commits, gifts, pledges and memos tables in the global environment.
 #' @importFrom dplyr src_mysql
 #' @importFrom magrittr %>% 
 #' @importFrom dplyr tbl
 #' @export
-initcommitsdb  <- function(db = 'commits') {
-  
-    #connect to the database
-    commitsdb  <- dplyr::src_mysql(db)
+initcommitsdb  <- function(db = 'commits', ...) {
+ 
+    # connect to the database
+    commitsdb  <- dplyr::src_mysql(db, ...)
     
     # connect to the tables in the db
     committbl  <- commitsdb  %>% dplyr::tbl("commit")
