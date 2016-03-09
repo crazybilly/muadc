@@ -4,10 +4,17 @@
 \alias{initcommitsdb}
 \title{Initialize my db connection}
 \usage{
-initcommitsdb(db = "commits", ...)
+initcommitsdb(db = "commits", host = "10.40.9.144", user = "adc",
+  password = "goBigBlue", ...)
 }
 \arguments{
 \item{db}{a string of the name of the database name with which you should connect. Defaults to the 'commits' db.}
+
+\item{host}{the hostname or ip address for the database server}
+
+\item{user}{the database username}
+
+\item{password}{the database password}
 
 \item{...}{further arguments to pass to dplyr::src_mysql}
 }
