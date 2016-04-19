@@ -4,10 +4,12 @@
 \alias{clean.df}
 \title{Clean the names of a data frame}
 \usage{
-clean.df(df)
+clean.df(df, keep.underscore = TRUE)
 }
 \arguments{
 \item{df}{a data frame}
+
+\item{keep.underscore}{a logical value indicating whether underscores be kept or removed}
 }
 \value{
 a data frame, or if dplyr is available, a tbl_df.
