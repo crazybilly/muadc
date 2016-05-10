@@ -2,10 +2,12 @@
 # Various and asundry aliases
   # ideas from http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile
 
-muadcEnv  <- new.env()
+# muadcEnv  <- new.env()
 
-assign('v', View, envir = muadcEnv)
-assign('h', head, envir = muadcEnv)
-assign('cd', setwd, envir = muadcEnv)
-assign('s', summary, envir = muadcEnv)
-assign('librarY', library, envir = muadcEnv)
+# attempting to move all these into data, rather than as a R script
+
+# v <- View
+# h <- head
+# cd <- setwd
+# s <- summary
+# librarY <- library
