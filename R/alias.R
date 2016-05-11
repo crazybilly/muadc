@@ -10,4 +10,17 @@
 # h <- head
 # cd <- setwd
 # s <- summary
-# librarY <- library
+#' 
+#' #' Common Aliases
+#' #' 
+#' #' @description Provides common shortcut aliases for several commonly used functions.
+#' #' 
+#' #' @name alias
+#' 
+#' #' @rdname alias
+#' #' @export 
+#' librarY <- library
+#' 
+#' #' @rdname alias
+#' #' @export 
+#' v <- utils::View
