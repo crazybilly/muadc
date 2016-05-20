@@ -24,20 +24,21 @@ skel  <- function( createbasescript = F, basescriptname = '00-source-all-files.R
   if( createbasescript ) {
     
     allRscripts   <- dir(pattern = '\\.R$')
+    allRscripts  <- allRscripts[allRscripts != basescriptname]
     
     scripttext  <- paste(
-      sub("(.*)", "source = (\\1, echo = T)", allRscripts)
+      sub("(.*)", "source('\\1', echo = T)", allRscripts)
       , collapse = "\n"
     )
     
     if( file.exists(basescriptname) ) {
-      prompt <- readlines(paste0("Do you want to overwrite ",basescriptname,"? [Y]"))
+      prompt <- readline(paste0("Do you want to overwrite ",basescriptname,"? [Y]"))
     } else {
       prompt  <- NA
     }
     
     if( is.blank(prompt) | grepl("y",prompt, ignore.case = T) ) {
-      writeLines(scripttext, basescriptname)
+      writeLines(paste0(scripttext,"\n\nbeepr::beep()"), basescriptname)
     }
     
   }
