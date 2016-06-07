@@ -4,11 +4,13 @@
 \alias{view.sample}
 \title{view.sample}
 \usage{
-view.sample(x, transpose = TRUE, sample.n = 3, sample.method = "head",
-  stdout = FALSE)
+view.sample(x, title, transpose = TRUE, sample.n = 3,
+  sample.method = "head", stdout = FALSE)
 }
 \arguments{
 \item{x}{an object to view. view.sample() is designed to work best with data frames but will work with vectors as well.}
+
+\item{title}{title for viewer window, pased to View().}
 
 \item{transpose}{a boolean value determining whether or not the data frame should be transposed. Defaults to TRUE so long data frames can be easily examined.}
 
