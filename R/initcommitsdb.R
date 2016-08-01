@@ -13,7 +13,7 @@
 #' @importFrom dplyr tbl
 #' @export
 
-initcommitsdb  <- function(db = 'commits', host = '10.40.9.144', user = 'adc', password = 'goBigBlue', ...) {
+initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', password = 'goBigBlue', ...) {
  
     # connect to the database
     commitsdb  <- dplyr::src_mysql(db, host = host, user = user, password = password, ... )
