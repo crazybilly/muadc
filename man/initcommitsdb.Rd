@@ -4,7 +4,7 @@
 \alias{initcommitsdb}
 \title{Initialize my db connection}
 \usage{
-initcommitsdb(db = "commits", host = "10.40.9.144", user = "adc",
+initcommitsdb(db = "commits", host = "10.40.9.145", user = "adc",
   password = "goBigBlue", ...)
 }
 \arguments{

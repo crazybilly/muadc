@@ -26,7 +26,7 @@ catadd <- function( addr = addr1, city = city, st = st, zip = zip, sep = ' ' ) {
 #' @export
 
 countif  <- function( col  ) {
-  table(col)[col]  %>% as.integer()
+  table(col)[as.character(col)]  %>% as.integer()
 }
 
 
