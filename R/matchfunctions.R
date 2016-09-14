@@ -49,7 +49,7 @@ prepformatch  <- function( x
                            , pidm = c('pidm','banner ID', 'bannerID')
                            , firstname = c('firstname','first name','^first$' )
                            , lastname = c('lastname','last name','^last$' )
-                           , addr = c('address line 1','address','addr')
+                           , addr = c('address line 1','address','addr',"address1","address 1","addr1")
                            , city = c('city','town','hometown')
                            , st = c('state/province','state','^st$')
                            , zip = c('zip code', 'zipcode','zip')
@@ -93,7 +93,7 @@ prephallp  <- function(collectdata=T) {
    
    hallp  <- hallptbl  %>% 
       #select(pidm, firstname, lastname, addr = `Address Line 1`, city = City, st = `State/Province`, zip = Zip, email = `PREF_E-mail`)  
-      select(pidm, firstname, lastname, addr =addr1, city , st , zip , email = prefemail)  
+      select(pidm, firstname, lastname, addr = addr1, city , st , zip , email = prefemail)  
    
    if(collectdata) {
       collect(hallp)

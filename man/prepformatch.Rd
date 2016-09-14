@@ -7,10 +7,11 @@
 prepformatch(x, pidm = c("pidm", "banner ID", "bannerID"),
   firstname = c("firstname", "first name", "^first$"),
   lastname = c("lastname", "last name", "^last$"),
-  addr = c("address line 1", "address", "addr"), city = c("city", "town",
-  "hometown"), st = c("state/province", "state", "^st$"),
-  zip = c("zip code", "zipcode", "zip"), email = c("preferred email",
-  "preferred e-mail", "pref email", "pref e-mail", "e-mail", "email"))
+  addr = c("address line 1", "address", "addr", "address1", "address 1",
+  "addr1"), city = c("city", "town", "hometown"), st = c("state/province",
+  "state", "^st$"), zip = c("zip code", "zipcode", "zip"),
+  email = c("preferred email", "preferred e-mail", "pref email",
+  "pref e-mail", "e-mail", "email"))
 }
 \arguments{
 \item{x}{a data frame to be prepared}

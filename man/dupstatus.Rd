@@ -4,7 +4,7 @@
 \alias{dupstatus}
 \title{Duplicate Status}
 \usage{
-dupstatus(df, dfxrefs = NA, xrefslong = NA)
+dupstatus(df, dfxrefs = NA, xrefslong = NA, segmentcol = NA)
 }
 \arguments{
 \item{df}{a data frame to work on}
@@ -13,6 +13,8 @@ dupstatus(df, dfxrefs = NA, xrefslong = NA)
 
 \item{xrefslong}{a data frame in long format of all known xrefs, passed as an argument to getrelationships() if necessary. 
 If NA, defaults to xaxref-pa.csv and xaxref-si.csv in data/warehouse.}
+
+\item{segmentcol}{an the unquoted name of a column that df is segemented by}
 }
 \value{
 a data frame with a new column describing status. Possible statuses are: \itemize{

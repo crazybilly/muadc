@@ -12,7 +12,7 @@ buildlongxref(..., calculateCH = T)
 \item{calculateCH}{a logical value determing whether or not CH relationships should be calculated from PA codes.}
 }
 \value{
-a data frame with pidm, xrefpidm and xrefcode columns in long format.
+a data frame with pidm, xref_pidm and xref_code columns in long format.
 }
 \description{
 build a table of all available xrefs from existing csvs (called from XAXREF). Also pulls all spouse xrefs from hallp. Used by getrelationships().
