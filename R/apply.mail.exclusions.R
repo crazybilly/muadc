@@ -34,7 +34,10 @@ apply.mail.exclusions  <- function(df,  idcol = 'pidm', primary.only = T, includ
     warning("Joining to hallptbl. This might take a while...")
     options(warn=-1) # turn off warnings for mysql
     
-    hallptbl          <- tbl( src_mysql('commits' ), 'hallp')
+    hallptbl          <- tbl( src_mysql('commits',host = '10.40.9.145', user = 'adc', password = 'goBigBlue'), 'hallp')
+    
+    
+    
     df  <- df  %>% 
       left_join(hallptbl  %>% select( pidm, addr1, deceased, primdnrind, excl), by = c(idcol = 'pidm'), copy = T)
                 
