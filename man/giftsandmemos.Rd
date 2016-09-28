@@ -10,15 +10,20 @@ giftsandmemos(collectdata = F)
 \item{collectdata}{a logical value describing whether or not the data should be collected from the database}
 }
 \value{
-if collectdata == T, a data frame of all gifts and memos with one line per transaction. If collectdata is FALSE, a tbl_sql with 6 columns:
-    - pidm - constituent's id
-    - desg - the designation number to which the gift was given
-    - campaign - the campaign in which the gift was given
-    - fisc_code - the fiscal year in which the gift was given
-    - amt - the gift amount or the amount which was memo credited to the constituent
-    - dt - the gift date
+a 6 column data frame
 }
 \description{
 Create a List of Gifts and memos
+}
+\details{
+If collectdata == T, returns a data frame of all gifts and memos with one line per transaction. If collectdata is FALSE, a tbl_sql with 6 columns:
+\itemize{
+ \item{"pidm"}{ constituent's id}
+ \item{"desg"}{ the designation number to which the gift was given}
+ \item{"campaign"}{ the campaign in which the gift was given}
+ \item{"fisc_code"}{ the fiscal year in which the gift was given}
+ \item{"amt"}{ the gift amount or the amount which was memo credited to the constituent}
+ \item{"dt"}{ the gift date}
+}
 }
 
