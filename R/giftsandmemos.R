@@ -10,7 +10,7 @@
 #'  \item{"campaign"}{ the campaign in which the gift was given}
 #'  \item{"fisc_code"}{ the fiscal year in which the gift was given}
 #'  \item{"amt"}{ the gift amount or the amount which was memo credited to the constituent}
-#'  \item{"dt"}{ the gift date}
+#'  \item{"dt"}{ the date the gift or memo was receipted}
 #' }
 #'     
 #' @return a 6 column data frame
