@@ -22,7 +22,7 @@ createhallpwitholdnames <- function() {
   
   hallpwitholdnames  <- hallptbl %>% 
     collect  %>% 
-    setNames(hallpnames$oldname)
+    stats::setNames(hallpnames$oldname)
   
   invisible(hallpwitholdnames)
   

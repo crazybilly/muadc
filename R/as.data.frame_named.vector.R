@@ -32,7 +32,7 @@ as.data.frame_named.vector <- function(x,valname=deparse(substitute(x))) {
     df  <- dplyr::tbl_df(df)
   }
   
-  df  <- setNames(df, c('names',valname))
+  df  <- stats::setNames(df, c('names',valname))
   row.names(df)  <- NULL
   
   return(df)
