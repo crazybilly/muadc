@@ -4,7 +4,7 @@
 \alias{write.tidy}
 \title{write.tidy}
 \usage{
-write.tidy(x, file = "", row.names = FALSE, na = "", ...)
+write.tidy(x, file = "", row.names = FALSE, na = "", excel = F, ...)
 }
 \arguments{
 \item{x}{the object to be written, preferably a matrix or data frame. If not, it is attempted to coerce x to a data frame.}
@@ -14,6 +14,8 @@ write.tidy(x, file = "", row.names = FALSE, na = "", ...)
 \item{row.names}{either a logical value indicating whether the row names of x are to be written along with x, or a character vector of row names to be written.}
 
 \item{na}{the string to use for missing values in the data.}
+
+\item{excel}{a logical value indicating whether the newly written file should be opened in Excel}
 
 \item{...}{other values to be passed to write.csv}
 }

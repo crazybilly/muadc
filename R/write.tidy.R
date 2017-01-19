@@ -5,8 +5,17 @@
 #' @param file either a character string naming a file or a connection open for writing. "" indicates output to the console.
 #' @param row.names either a logical value indicating whether the row names of x are to be written along with x, or a character vector of row names to be written.
 #' @param na the string to use for missing values in the data.
+#' @param excel a logical value indicating whether the newly written file should be opened in Excel
 #' @param ... other values to be passed to write.csv
+#' 
 #' @export
-write.tidy  <- function(x, file = "", row.names = FALSE, na = "", ... ) {
+write.tidy  <- function(x, file = "", row.names = FALSE, na = "", excel = F , ... ) {
+  
   write.csv(x, file, row.names=row.names, na=na, ... )
+  
+  if(excel) {
+    shell.exec(normalizePath(file) )
+  }
+  
+  
 }
