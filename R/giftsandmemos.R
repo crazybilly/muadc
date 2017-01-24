@@ -17,46 +17,46 @@
 #'     
 #' @export
 #'
-giftsandmemos  <- function( collectdata = F) {
-  
-  if( !exists("giftstbl" )) {
-    initcommitsdb()
+giftsandmemos  <-  function( collectdata = F) {
+    
+    if( !exists("giftstbl" )) {
+      initcommitsdb()
+    }
+    
+    
+    gifts  = giftstbl %>% 
+      select(
+        pidm 
+        , desg
+        , campaign
+        , fisc_code
+        , amt = gift_amt
+        , dt  = gift_date
+      )
+    
+    memos =  memostbl %>% 
+      select(
+        pidm = memo_pidm
+        , desg
+        , campaign
+        , fisc_code
+        , amt = memo_amt
+        , dt = gift_date
+      )
+    
+    if( collectdata ) {
+      bind_rows(
+        gift = gifts %>% collect() 
+        , memo = memos %>% collect() 
+        , .id  = 'type'
+      )
+    } else {
+      gifts %<>% mutate(type = 'gift')
+      memos %<>% mutate(type = 'memo')
+      dplyr::union_all(gifts,memos)
+    }
+    
+    
+    
+    
   }
-  
-  
-  gifts  = giftstbl %>% 
-    select(
-      pidm = PIDM
-      , desg = GIFT_DESG
-      , campaign = CAMPAIGN
-      , fisc_code = FISC_CODE
-      , amt = GIFT_AMT
-      , dt  = GIFT_DATE
-    )
-  
-  memos =  memostbl %>% 
-    select(
-      pidm = memopidm
-      , desg
-      , campaign
-      , fisc_code
-      , amt = memo_amt
-      , dt = gift_date
-    )
-  
-  if( collectdata ) {
-    bind_rows(
-      gift = gifts %>% collect() 
-      , memo = memos %>% collect() 
-      , .id  = 'type'
-    )
-  } else {
-    gifts %<>% mutate(type = 'gift')
-    memos %<>% mutate(type = 'memo')
-    dplyr::union_all(gifts,memos)
-  }
-  
-  
-  
-  
-}
