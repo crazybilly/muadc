@@ -4,7 +4,8 @@
 \alias{file.newest}
 \title{Identify the Most Recently Edited File}
 \usage{
-file.newest(path = ".", pattern = NULL, invert = F, ...)
+file.newest(path = ".", pattern = NULL, invert = F, messagename = F,
+  ...)
 }
 \arguments{
 \item{path}{a character vector of full path names; the default corresponds to the working directory, `getwd()`. Tilde expansion (see `path.expand``) is performed. Missing values will be ignored.}
@@ -12,6 +13,8 @@ file.newest(path = ".", pattern = NULL, invert = F, ...)
 \item{pattern}{an optional regular expression. Only file names which match the regular expression will be returned.}
 
 \item{invert}{a logical value. If FALSE, returns the most recently modified file. If TRUE, returns the first modified file.}
+
+\item{messagename}{a logical value determing whether the results should be messaged on the console. Useful in semi-interactive cases when output might not be immediately available, for example, within a dplyr chain.}
 
 \item{...}{other arguments to pass to `list.files`}
 }
