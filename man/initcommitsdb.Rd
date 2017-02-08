@@ -24,4 +24,3 @@ Assigns a database connection, plus connections to the hallp commits, gifts, ple
 \description{
 a convinence function to connect to the commits database on localhost.
 }
-

@@ -15,4 +15,3 @@ If x is a vector, returns a single numeric count of the NAs in the vector. If x 
 \description{
 Count the number of NA values in a data frame or vector.
 }
-

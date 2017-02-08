@@ -7,7 +7,6 @@
 #' @param ...  additional arguments to pass to `source()`
 #' @param beep a numerical value to pass to `beepr::beep()`, indicating what what sound should indicate the process is finished
 #'
-#' @return
 #' @export
 #'
 sourcebeep  <- function( file, echo = T, ..., beep = 1 ) {

@@ -23,4 +23,3 @@ yesno.as.logical(foo)
 foo  <- c("Y", NA, "Y", "Yes",NA, "No", "N","something else")
 yesno.as.logical(foo)
 }
-

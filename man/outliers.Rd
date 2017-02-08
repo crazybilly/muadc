@@ -14,11 +14,10 @@ outliers(x, na.rm = T)
 \value{
 a list with two values:
 \enumerate{
- \item bottom - the lower bound
- \item top - the upper bound
- }
+\item bottom - the lower bound
+\item top - the upper bound
+}
 }
 \description{
 Given a numeric vector, return the upper and lower bounds for outliers. Assumes IQR * 1.5 as bounds.
 }
-

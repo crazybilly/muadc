@@ -13,6 +13,5 @@ excel(file)
 returns NULL if successfull.
 }
 \description{
-open a file in Excel. This is convience wrapper around `shell.exec(normalizePath(file) )`.
+open a file in Excel. This is convience wrapper around \code{shell.exec(normalizePath(file) )}.
 }
-

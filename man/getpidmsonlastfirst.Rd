@@ -17,4 +17,3 @@ a data frame with nrows(x) with a new column, pidm_lastfirst, appended
 \description{
 Returns a data frame with pidms based on lastname, first initial appended.
 }
-

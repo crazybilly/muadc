@@ -17,4 +17,3 @@ a data frame with nrows(x) with a new column, pidm_email, appended
 \description{
 Returns a data frame with pidms based on email appended based on matching rules.
 }
-

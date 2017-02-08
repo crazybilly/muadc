@@ -17,9 +17,11 @@ view.sample(x, title, transpose = TRUE, sample.n = 3,
 \item{sample.n}{an integer value determining how many rows should be sampled}
 
 \item{sample.method}{a string describing the way rows should be chosen from x. Valid values include:
-- `head` uses head() to pull the first sample.n rows
-- `sample` randomly chooses sample.n rows
-- `tail` uses tail() to pull the last sample.n rows}
+\itemize{
+\item \code{head} uses head() to pull the first sample.n rows
+\item \code{sample} randomly chooses sample.n rows
+\item \code{tail} uses tail() to pull the last sample.n rows
+}}
 
 \item{stdout}{a boolean value determing whether the results should be sent to R's standard output. The default value, FALSE, sends the output to RStudio's View() function.}
 }
@@ -29,4 +31,3 @@ unless stdout==TRUE, does not return a value. Otherwise, returns the sampled dat
 \description{
 get a quick View of gigantic data, defaults to printing to RStudio's View().
 }
-

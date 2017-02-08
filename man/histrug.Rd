@@ -12,4 +12,3 @@ histrug(x)
 \description{
 a convience wrapper to put a rug underneath a histogram. Also calls muplot for formatting tweaks
 }
-

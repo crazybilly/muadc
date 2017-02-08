@@ -19,4 +19,3 @@ a data frame with one row per person who has any relationship to someone else in
 \description{
 builds a table showing what relationships each individual in a data frame has with others in the same data frame. Used by dupstatus().
 }
-

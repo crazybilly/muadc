@@ -1,9 +1,10 @@
-#' Create a List of Gifts and memos
+#' Create a List of Gifts and Memos
 #'  
+#' @description Build a list of all gifts (or commitments) and memos.
 #'
 #' @param collectdata a logical value describing whether or not the data should be collected from the database
 #'
-#' @details If collectdata == T, returns a data frame of all gifts and memos with one line per transaction. If collectdata is FALSE, a tbl_sql with 6 columns:
+#' @details If collectdata == T, returns a data frame of all gifts/commitments and memos with one line per transaction. If collectdata is FALSE, a tbl_sql with 6 columns:
 #' \itemize{
 #'  \item{"pidm"}{ constituent's id}
 #'  \item{"desg"}{ the designation number to which the gift was given}
@@ -13,7 +14,7 @@
 #'  \item{"dt"}{ the date the gift or memo was receipted}
 #' }
 #'     
-#' @return a 6 column data frame
+#' @return a 6 column data_frame or a tbl_sql
 #'     
 #' @export
 #'
@@ -63,25 +64,9 @@ giftsandmemos  <-  function( collectdata = F) {
 
 
 
-#' Create a List of Commitments and Memos
-#'  
-#'
-#' @param collectdata a logical value describing whether or not the data should be collected from the database
-#'
-#' @details If collectdata == T, returns a data frame of all commitments and memos with one line per transaction. If collectdata is FALSE, a tbl_sql with 6 columns:
-#' \itemize{
-#'  \item{"pidm"}{ constituent's id}
-#'  \item{"desg"}{ the designation number to which the gift was given}
-#'  \item{"campaign"}{ the campaign in which the gift was given}
-#'  \item{"fisc_code"}{ the fiscal year in which the gift was given}
-#'  \item{"amt"}{ the gift amount or the amount which was memo credited to the constituent}
-#'  \item{"dt"}{ the date the gift or memo was receipted}
-#' }
-#'     
-#' @return a 6 column data frame
-#'     
+#' @rdname giftsandmemos
+#' 
 #' @export
-#'
 commitsandmemos  <-  function( collectdata = F) {
   
   if( !exists("committbl" )) {

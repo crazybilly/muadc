@@ -16,4 +16,3 @@ read.hallp(ifexists = T, existsname = "hallp")
 \description{
 A convience function around read.tidy specifically to read in G:/ALUMNI/Jake T/datawarehouse/data/hallp.csv.
 }
-

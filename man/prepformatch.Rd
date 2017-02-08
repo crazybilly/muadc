@@ -38,4 +38,3 @@ a data frame with nrows(x) with the columns matched by the regular expressions.
 \description{
 Preps a data frame for matching by just grabbing the necessary columns. Currently does not handle missing columns/no matches very well. Needs to be improved.
 }
-

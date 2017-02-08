@@ -26,4 +26,3 @@ returns a 2-column data frame. The first column is a vector of ids from the orig
 \description{
 renormalize a denormalized list into a Boyce-Codd style data frame suitable for relational databases.
 }
-

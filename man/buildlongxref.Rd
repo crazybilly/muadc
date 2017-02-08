@@ -17,4 +17,3 @@ a data frame with pidm, xref_pidm and xref_code columns in long format.
 \description{
 build a table of all available xrefs from existing csvs (called from XAXREF). Also pulls all spouse xrefs from hallp. Used by getrelationships().
 }
-

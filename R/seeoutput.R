@@ -4,7 +4,7 @@
 #' 
 #' @param dir the path to a directory to open
 #'
-#' @return
+#' @return returns a NULL value when successfull, primarily useful for its side effect.
 #' @export
 #'
 seeoutput  <- function( dir = 'output') {
@@ -12,11 +12,10 @@ seeoutput  <- function( dir = 'output') {
   origdir  <- dir
   
   if(!dir.exists(dir) ) {
-    or
-    dir  <-  getwd()
+    origdir  <-  getwd()
+    warning(paste(origdir, "does not exist, opening working directory."))
   }
   
-  warning(paste(origdir, "does not exist, opening working directory."))
   
   shell.exec(dir)
   

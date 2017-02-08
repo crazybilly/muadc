@@ -11,13 +11,12 @@ eightytwenty(x)
 }
 \value{
 a data frame with the following columns:
- \enumerate{
-   \item cutoff - the cutoff value
-   \item perc_of_total_x - the percentage of total value (ie. the "80")
-   \item perc_of_rows  - the percentage of observations above the cutoff (ie. the "20")
-   }
+\enumerate{
+\item cutoff - the cutoff value
+\item perc_of_total_x - the percentage of total value (ie. the "80")
+\item perc_of_rows  - the percentage of observations above the cutoff (ie. the "20")
+}
 }
 \description{
 Given a numerical vector, above what value is there more total value, ie. where is the "80/20" split. Returns the value, and the 80/20 split values.
 }
-

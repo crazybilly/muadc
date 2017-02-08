@@ -17,4 +17,3 @@ a data frame with nrows(x) with count columns appended
 \description{
 Creates COUNTIF style counts to determine whether 1:1 matching can be done on a particular field.
 }
-

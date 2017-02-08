@@ -23,4 +23,3 @@ returns the 4 columns pasted together
 \description{
 Creates a concatenated address. Primarily for use in dplyr::mutate().
 }
-

@@ -17,4 +17,3 @@ a data frame, or if dplyr is available, a tbl_df.
 \description{
 Clean up a data frame by moving all column names to lower case, removing spaces and punctuation. Also, when dplyr is available, return the data frame as a tbl_df.
 }
-

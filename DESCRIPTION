@@ -9,9 +9,10 @@ Description: A collection of functions and variables for day to day work in
     Millikin University's Alumni & Development Center
 License: GPL 2 or higher
 LazyData: true
+Roxygen: list(markdown = TRUE)
 Imports:
     dplyr,
     magrittr,
     lazyeval,
     stats
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

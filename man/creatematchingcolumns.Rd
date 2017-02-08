@@ -15,4 +15,3 @@ a data frame with concatenated name fields which will be used for matching.
 \description{
 Builds the columns to do pidm matching on. Requires a df built from prepformatch() or prephallp().
 }
-

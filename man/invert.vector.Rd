@@ -15,4 +15,3 @@ a numeric vector with length = length(x)
 \description{
 Inverts a linear vector x, setting min(x) = min(x) and vice versa. Values in between are assumed to be linear values along the scale between min(x) and max(x).
 }
-

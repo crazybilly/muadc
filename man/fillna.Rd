@@ -17,4 +17,3 @@ a vector with length of x
 \description{
 Replaces NA values in a vector with a value, 0 by default. This is really just a convinence wrapper around replace() to minimize typing.
 }
-

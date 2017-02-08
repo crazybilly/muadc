@@ -11,4 +11,3 @@ Sets a variety of plot options so plots come out looking consistent with Milliki
 }
 \keyword{par}
 \keyword{plot}
-

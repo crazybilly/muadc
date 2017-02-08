@@ -16,4 +16,3 @@ startup(load = F, xlsx = F, MySQL = F)
 \description{
 do the things I do at startup all the time
 }
-

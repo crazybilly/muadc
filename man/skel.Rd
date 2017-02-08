@@ -17,4 +17,3 @@ Does not return a value, but has side effects, namely creating directories and t
 \description{
 Creates the folder structure and optional basescript for an R project. Creates two directories, data and output, assuming they don't already exist as well as the base script.
 }
-

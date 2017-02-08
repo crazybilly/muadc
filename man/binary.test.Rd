@@ -3,7 +3,7 @@
 \name{binary.test}
 \alias{binary.test}
 \title{Binary
- 
+
 checks if a vector is empty or not, return a factor with optional descriptive names}
 \usage{
 binary.test(x, i, newname, emptyname = F, notemptyname = T)
@@ -24,7 +24,6 @@ Returns a data frame with the first column of the original data frame (hopefully
 }
 \description{
 Binary
- 
+
 checks if a vector is empty or not, return a factor with optional descriptive names
 }
-

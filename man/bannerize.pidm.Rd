@@ -15,4 +15,3 @@ a character vector where x is padded out to 8 characters with zeros
 \description{
 turn a vector into Banner pidms, by padding it out to 8 characters with zeros. Coerces numeric values to character.
 }
-

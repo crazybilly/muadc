@@ -17,4 +17,3 @@ a data frame with nrows(x) with a new column, pidm_catname, appended
 \description{
 Returns a data frame with pidms based on catname appended.
 }
-

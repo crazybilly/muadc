@@ -12,4 +12,3 @@ Returns a collected copy of hallptbl as a dataframe.
 \description{
 Creates a copy of hallp with old column names, ie. prior to Fall 2015.
 }
-

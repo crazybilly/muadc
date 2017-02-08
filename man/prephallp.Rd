@@ -15,4 +15,3 @@ a data frame of hallp data. Note that data is only collected, not prepped in any
 \description{
 Pulls hallp and gets it ready for matching.
 }
-

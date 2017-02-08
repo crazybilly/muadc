@@ -2,28 +2,30 @@
 % Please edit documentation in R/giftsandmemos.R
 \name{giftsandmemos}
 \alias{giftsandmemos}
-\title{Create a List of Gifts and memos}
+\alias{commitsandmemos}
+\title{Create a List of Gifts and Memos}
 \usage{
 giftsandmemos(collectdata = F)
+
+commitsandmemos(collectdata = F)
 }
 \arguments{
 \item{collectdata}{a logical value describing whether or not the data should be collected from the database}
 }
 \value{
-a 6 column data frame
+a 6 column data_frame or a tbl_sql
 }
 \description{
-Create a List of Gifts and memos
+Build a list of all gifts (or commitments) and memos.
 }
 \details{
-If collectdata == T, returns a data frame of all gifts and memos with one line per transaction. If collectdata is FALSE, a tbl_sql with 6 columns:
+If collectdata == T, returns a data frame of all gifts/commitments and memos with one line per transaction. If collectdata is FALSE, a tbl_sql with 6 columns:
 \itemize{
- \item{"pidm"}{ constituent's id}
- \item{"desg"}{ the designation number to which the gift was given}
- \item{"campaign"}{ the campaign in which the gift was given}
- \item{"fisc_code"}{ the fiscal year in which the gift was given}
- \item{"amt"}{ the gift amount or the amount which was memo credited to the constituent}
- \item{"dt"}{ the date the gift or memo was receipted}
+\item{"pidm"}{ constituent's id}
+\item{"desg"}{ the designation number to which the gift was given}
+\item{"campaign"}{ the campaign in which the gift was given}
+\item{"fisc_code"}{ the fiscal year in which the gift was given}
+\item{"amt"}{ the gift amount or the amount which was memo credited to the constituent}
+\item{"dt"}{ the date the gift or memo was receipted}
 }
 }
-

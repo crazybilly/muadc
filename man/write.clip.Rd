@@ -25,4 +25,3 @@ write.clip(x, size = "4096", sep = "\\t", na = "", row.names = F,
 \description{
 A convience wrapper for write.table that writes tab-seperated data to the Windows clipboard. Does not work in *nix.
 }
-

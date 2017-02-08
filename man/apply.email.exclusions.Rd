@@ -28,4 +28,3 @@ a data frame filtered for a traditional mailing. If prefemail, deceased, primdnr
 \description{
 Apply the standard Millikin email exclusions to a mailing list.
 }
-

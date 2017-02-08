@@ -11,11 +11,10 @@ sourcebeep(file, echo = T, ..., beep = 1)
 
 \item{echo}{should the call to source(file) be made with the echo argument set to TRUE}
 
-\item{...}{additional arguments to pass to `source()`}
+\item{...}{additional arguments to pass to \code{source()}}
 
-\item{beep}{a numerical value to pass to `beepr::beep()`, indicating what what sound should indicate the process is finished}
+\item{beep}{a numerical value to pass to \code{beepr::beep()}, indicating what what sound should indicate the process is finished}
 }
 \description{
 Source an R file and beep when you're finished
 }
-
