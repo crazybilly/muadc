@@ -5,11 +5,13 @@
 \alias{commitsandmemos}
 \title{Create a List of Gifts and Memos}
 \usage{
-giftsandmemos(collectdata = F)
+giftsandmemos(onedollar = F, collectdata = F)
 
-commitsandmemos(collectdata = F)
+commitsandmemos(onedollar = F, collectdata = F)
 }
 \arguments{
+\item{onedollar}{a logical value describing whether or not gifts of $1 or less should be considered}
+
 \item{collectdata}{a logical value describing whether or not the data should be collected from the database}
 }
 \value{

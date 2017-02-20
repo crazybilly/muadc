@@ -2,6 +2,7 @@
 #'  
 #' @description Build a list of all gifts (or commitments) and memos.
 #'
+#' @param onedollar a logical value describing whether or not gifts of $1 or less should be considered
 #' @param collectdata a logical value describing whether or not the data should be collected from the database
 #'
 #' @details If collectdata == T, returns a data frame of all gifts/commitments and memos with one line per transaction. If collectdata is FALSE, a tbl_sql with 6 columns:
@@ -18,7 +19,7 @@
 #'     
 #' @export
 #'
-giftsandmemos  <-  function( collectdata = F) {
+giftsandmemos  <-  function( onedollar = F, collectdata = F) {
     
     if( !exists("giftstbl" )) {
       initcommitsdb()
@@ -35,6 +36,7 @@ giftsandmemos  <-  function( collectdata = F) {
         , dt  = gift_date
       )
     
+    
     memos =  memostbl %>% 
       select(
         pidm = memo_pidm
@@ -44,6 +46,11 @@ giftsandmemos  <-  function( collectdata = F) {
         , amt = memo_amt
         , dt = gift_date
       )
+    
+    if(!onedollar) {
+      gifts %<>% filter(amt > 1)
+      memos %<>% filter(amt > 1)
+    }
     
     if( collectdata ) {
       bind_rows(
@@ -67,7 +74,7 @@ giftsandmemos  <-  function( collectdata = F) {
 #' @rdname giftsandmemos
 #' 
 #' @export
-commitsandmemos  <-  function( collectdata = F) {
+commitsandmemos  <-  function( onedollar = F, collectdata = F) {
   
   if( !exists("committbl" )) {
     initcommitsdb()
@@ -93,6 +100,12 @@ commitsandmemos  <-  function( collectdata = F) {
       , amt = memo_amt
       , dt = gift_date
     )
+  
+  
+  if(!onedollar) {
+    commits  %<>% filter(amt > 1)
+    memos %<>% filter(amt > 1)
+  }
   
   if( collectdata ) {
     bind_rows(
