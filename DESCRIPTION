@@ -5,8 +5,7 @@ Version: 1.0
 Date: 2014-09-24
 Author: CrazyBilly
 Maintainer: Jake Tolbert <crazybilly@gmail.com>
-Description: A collection of functions and variables for day to day work in
-    Millikin University's Alumni & Development Center
+Description: A collection of functions and variables for day to day work in Millikin University's Alumni & Development Center
 License: GPL 2 or higher
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -14,5 +13,7 @@ Imports:
     dplyr,
     magrittr,
     lazyeval,
+    stringr,
+    purrr,
     stats
 RoxygenNote: 6.0.1
