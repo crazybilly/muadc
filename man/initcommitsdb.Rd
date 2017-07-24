@@ -16,10 +16,10 @@ initcommitsdb(db = "commits", host = "10.40.9.145", user = "adc",
 
 \item{password}{the database password}
 
-\item{...}{further arguments to pass to dplyr::src_mysql}
+\item{...}{further arguments to pass to DBI::dbConnect}
 }
 \value{
-Assigns a database connection, plus connections to the hallp commits, gifts, pledges and memos tables in the global environment.
+Assigns a database connection, plus connections to the hallp, dnrc, desgs, commits, gifts, pledges and memos tables in the global environment.
 }
 \description{
 a convinence function to connect to the commits database on localhost.

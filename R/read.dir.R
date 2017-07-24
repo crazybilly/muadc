@@ -12,11 +12,19 @@
 #'
 read.dir  <- function(path = ".", pattern = NULL, sep = ",", ... ) {
   
+  
   allfiles  <- list.files(path = path, pattern = pattern , full.names = T, ... ) 
   
   objectnames  <- allfiles %>% 
     tolower() %>% 
+    str_replace(path, "") %>% 
+    str_replace_all("\\/", "") %>% 
+    str_replace_all(" ", "_") 
+  
+  if(!is.null(pattern)) {
+    objectnames  <- objectnames %>% 
     str_replace( pattern, "") 
+  }
   
   results  <- lapply(allfiles, function(x) read.tidy(x, sep = sep) ) %>% 
     setNames(objectnames)
