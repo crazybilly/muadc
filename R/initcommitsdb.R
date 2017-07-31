@@ -28,6 +28,7 @@ initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', p
     hallptbl   <- commitsdb  %>% dplyr::tbl("hallp")
     dnrctbl    <- commitsdb  %>% dplyr::tbl("dnrc") %>% 
                   left_join(tbl(commitsdb, "dnr_catg"), by = "dnrc")
+    
     desgstbl   <- commitsdb  %>% dplyr::tbl("desgs") %>% 
                   left_join(tbl(commitsdb, "rfcclubs") %>% 
                               select(
@@ -50,6 +51,6 @@ initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', p
     assign("memostbl",  memostbl,  env=globalenv())
     assign("hallptbl",  hallptbl,  env=globalenv())
     assign("dnrctbl",   dnrctbl,   env=globalenv())
-    assign("desgstbl",  dnrctbl,   env=globalenv())
+    assign("desgstbl",  desgstbl,  env=globalenv())
   
 }
