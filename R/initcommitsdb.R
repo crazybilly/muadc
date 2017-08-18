@@ -8,11 +8,10 @@
 #' @param ... further arguments to pass to DBI::dbConnect
 #' 
 #' @return Assigns a database connection, plus connections to the hallp, dnrc, desgs, commits, gifts, pledges and memos tables in the global environment.
-#' @importFrom DBI dbConnect
+#' @import odbc
+#' @import dplyr
+#' @import DBI
 #' @importFrom RMySQL MySQL
-#' @importFrom dplyr src_mysql
-#' @importFrom magrittr %>% 
-#' @importFrom dplyr tbl
 #' @export
 
 initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', password = 'goBigBlue', ...) {
