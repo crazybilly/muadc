@@ -59,8 +59,8 @@ giftsandmemos  <-  function( onedollar = F, collectdata = F) {
         , .id  = 'type'
       )
     } else {
-      gifts %<>% mutate(type = 'gift')
-      memos %<>% mutate(type = 'memo')
+      gifts  <- gifts %>% mutate(type = 'gift')
+      memos  <- memos %>% mutate(type = 'memo')
       dplyr::union_all(gifts,memos)
     }
     
