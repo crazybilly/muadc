@@ -8,7 +8,7 @@
 #' @param ... further arguments to pass to DBI::dbConnect
 #' 
 #' @return Assigns a database connection, plus connections to the hallp, dnrc, desgs, commits, gifts, pledges and memos tables in the global environment.
-#' @import odbc
+#' @import pool
 #' @import dplyr
 #' @import DBI
 #' @importFrom RMySQL MySQL
@@ -17,7 +17,7 @@
 initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', password = 'goBigBlue', ...) {
  
     # connect to the database
-    commitsdb  <- DBI::dbConnect(RMySQL::MySQL(), dbname = db, host = host, user = user, password = password, ... )
+    commitsdb  <- dbPool(RMySQL::MySQL(), dbname = db, host = host, user = user, password = password, ... )
     
     # connect to the tables in the db
     committbl  <- commitsdb  %>% dplyr::tbl("commit")
