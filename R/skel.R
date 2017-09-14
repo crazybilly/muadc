@@ -9,15 +9,19 @@
 #' @return Does not return a value, but has side effects, namely creating directories and the base script.
 #' @export
 #'
-skel  <- function( createbasescript = F, basescriptname = '00-source-all-files.R') {
+skel  <- function( createbasescript = F, basescriptname = '00-source-all-files.R', path = NULL) {
+  
+  if(!is.null(path) ) {
+    path  <- getwd()
+  }
   
   
   if( !dir.exists('output') ) {
-    dir.create('output')
+    dir.create(paste0(path,'/output'))
   }
   
   if( !dir.exists('data') ) {
-    dir.create('data')
+    dir.create(paste0(path,'/data'))
   }
   
   

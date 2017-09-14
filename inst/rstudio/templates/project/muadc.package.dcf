@@ -1,0 +1,25 @@
+Binding: muadc.package
+Title: MU ADC Package
+Icon: millikin-m.png
+
+
+Parameter: create_skel
+Widget: CheckboxInput
+Label: Create Folders
+Default: On
+Position: left
+
+
+Parameter: createbasescript
+Widget: CheckboxInput
+Label: Create base script
+Default: Off
+Position: left
+
+
+Parameter: basecriptname
+Widget: TextInput
+Label: Overwrite base script name
+Default: 00-source-all-files.R
+Position: left
+

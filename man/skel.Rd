@@ -4,7 +4,8 @@
 \alias{skel}
 \title{Create Rproject Skeleton}
 \usage{
-skel(createbasescript = F, basescriptname = "00-source-all-files.R")
+skel(createbasescript = F, basescriptname = "00-source-all-files.R",
+  path = NULL)
 }
 \arguments{
 \item{createbasescript}{a logical value indicating whether or not a base script should be created. The base script will source all R scripts in the working directory}
