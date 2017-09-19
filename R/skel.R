@@ -11,7 +11,7 @@
 #'
 skel  <- function( createbasescript = F, basescriptname = '00-source-all-files.R', path = NULL) {
   
-  if(!is.null(path) ) {
+  if(is.null(path) ) {
     path  <- getwd()
   }
   
