@@ -17,7 +17,8 @@ If NA, defaults to xaxref-pa.csv and xaxref-si.csv in data/warehouse.}
 \item{segmentcol}{an the unquoted name of a column that df is segemented by}
 }
 \value{
-a data frame with a new column describing status. Possible statuses are: \itemize{
+a data frame with new columns describing status. Possible statuses for the dupstatus are: \itemize{
+\item dupstatus a column describing whether the row is a duplicate or not. Possible statuses include: \itemize{
 \item single - no relationship to anyone else in df
 \item bulk inbox - address is a bulk inbox (1184 W Main, PO Box 1955 or 301 SW Adams)
 \item relationships unknown - constituent shares an address with one or more people in df, but are not xref'd to those people
@@ -25,6 +26,15 @@ a data frame with a new column describing status. Possible statuses are: \itemiz
 \item 2nd spouse - constituent is married to another constituent in df and is not the primary
 \item other family - constituent shares an address with someone else on th elist and that person's child, parent or sibling
 }
+\item cataddr - the concatenated mailing address
+\item countcat - a count of how many times cataddr appears in df
+\item bulkaddr - a logical value describing whether cataddr is a bulk mail box
+\item CH - whether the row is a child of someone else in df
+\item PA - whether the row is a parent of someone else in df
+\item SI - whether the row is a sibling of someone else in df
+\item SP - whether the row is a spouse of someone else in df
+}
+Also included are cataddr (concatenated address), countcat (a count of how often cataddr appears in df), bulkaddr a logical
 }
 \description{
 calculate dup status

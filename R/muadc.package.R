@@ -16,7 +16,7 @@ muadc.package  <- function(path, ... ) {
   if(dots$create_skel ) {
     skel(
         createbasescript = dots$createbasescript
-      , basescriptname   = dots$basescriptname
+      , basescriptname   = dots$basecriptname
       , path = path
     ) 
   }
