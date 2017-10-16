@@ -15,5 +15,10 @@ Imports:
     lazyeval,
     stringr,
     purrr,
-    stats
+    stats,
+    stringr,
+    readr,
+    DBI,
+    RMySQL,
+    pool
 RoxygenNote: 6.0.1

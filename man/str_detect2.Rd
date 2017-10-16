@@ -9,7 +9,7 @@ str_detect2(string, pattern, default = F)
 \arguments{
 \item{string}{Input vector. Either a character vector, or something coercible to one.}
 
-\item{pattern}{Pattern to look for. See \link\link{stringr}{str_detect} .}
+\item{pattern}{Pattern to look for. See \code{\link[stringr]{str_detect}} .}
 
 \item{default}{a default value to be used if string is NA}
 }

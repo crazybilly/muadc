@@ -9,7 +9,6 @@
 #' @inheritDotParams utils::read.csv header quote:comment.char
 #' 
 #' 
-#' 
 #' @return Returns a data frame will lower cased names and all punctuation removed. If dplyr is already loaded, it returns a data frame as a tbl_df--otherwise, it returns a simple data frame.
 #' @export 
 
@@ -29,7 +28,7 @@ read.tidy <- function(x='clipboard',sep = '\t', ifexists=F,existsname,...){
    
   if( ifexists ) {
     if( !exists(existsname) ) {
-      df <- read.csv(x,sep = sep, stringsAsFactors=F,...)
+      df <- read.csv(x, sep = sep, stringsAsFactors = F, ...)
       clean.df(df)
       
     } else { 
@@ -38,7 +37,7 @@ read.tidy <- function(x='clipboard',sep = '\t', ifexists=F,existsname,...){
       }
   }
   else {
-    df <- read.csv(x,sep = sep, stringsAsFactors=F,...)
+    df <- read.csv(x, sep = sep, stringsAsFactors = F, ...)
     clean.df(df)
     
   }
