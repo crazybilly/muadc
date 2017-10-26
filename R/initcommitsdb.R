@@ -39,6 +39,9 @@ initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', p
                               )
                     , by = "desg"
                   )
+    
+    actstbl  <- commitsdb %>% dplyr::tbl("acts") %>% 
+                  left_join(tbl(commitsdb, "acts_catg"), by = 'act')
        
     # assign the tables (and the database connection) 
     #  in the global environment
