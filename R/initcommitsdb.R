@@ -54,5 +54,6 @@ initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', p
     assign("hallptbl",  hallptbl,  env=globalenv())
     assign("dnrctbl",   dnrctbl,   env=globalenv())
     assign("desgstbl",  desgstbl,  env=globalenv())
+    assign("actstbl" ,  desgstbl,  env=globalenv())
   
 }
