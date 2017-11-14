@@ -17,10 +17,16 @@ addspouses  <- function(df, spid = 'spouse') {
     filter(!is.na(pidm))
   
   if( df_is_lazy ) { 
-    union( df ,spouses)
+    results  <- union( df ,spouses)
   } else {
-    bind_rows('primary' = df , "spouse" = spouses %>% collect, .id = spid)
+    results  <- bind_rows('primary' = df , "spouse" = spouses %>% collect, .id = spid) %>% distinct()
   }
   
+  
+  if(any(duplicated(results$pidm))) { 
+    warning("You have duplicates in results. Probably, both people appeared in the original data frame.")
+  }
+ 
+  return(results)
   
 }
