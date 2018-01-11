@@ -15,7 +15,12 @@
 #' @export
 
 catadd <- function( addr = addr1, city = city, st = st, zip = zip, sep = ' ' ) {
-  paste(addr,city,st,zip, sep = sep)
+  addq  <- enquo(addr)
+  cityq <- enquo(city)
+  stq   <- enquo(st)
+  zipq  <- enquo(zip)
+  
+  paste(!!addq, !!cityq, !!stq, !!zipq, sep = sep)
 }
 
 #' @title Countif

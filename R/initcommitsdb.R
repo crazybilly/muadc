@@ -25,20 +25,29 @@ initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', p
     pledgestbl <- commitsdb  %>% dplyr::tbl("pledges")
     memostbl   <- commitsdb  %>% dplyr::tbl("memos")
     hallptbl   <- commitsdb  %>% dplyr::tbl("hallp")
-    dnrctbl    <- commitsdb  %>% dplyr::tbl("dnrc") %>% 
-                  left_join(tbl(commitsdb, "dnr_catg"), by = "dnrc")
+    dnrctbl    <- tryCatch({
+                    commitsdb  %>% dplyr::tbl("dnrc") %>% 
+                     left_join(tbl(commitsdb, "dnr_catg"), by = "dnrc")
+                  },  error = function(e) {
+                    commitsdb  %>% dplyr::tbl("dnrc")  %>% 
+                     left_join(tbl(commitsdb, "dnr_catg"), by = c("dnrc" = "donor_code"))
+                  })
     
-    desgstbl   <- commitsdb  %>% dplyr::tbl("desgs") %>% 
-                  left_join(tbl(commitsdb, "rfcclubs") %>% 
-                              select(
-                                  desg
-                                , rfc_college = college
-                                , rfc_college_name = college_name
-                                , rfc_type = desg_type
-                                , rfc = rfc_club
-                              )
-                    , by = "desg"
-                  )
+    desgstbl   <- tryCatch({
+                    commitsdb  %>% dplyr::tbl("desgs") %>% 
+                      left_join(tbl(commitsdb, "rfcclubs") %>% 
+                                select(
+                                    desg
+                                  , rfc_college = college
+                                  , rfc_college_name = college_name
+                                  , rfc_type = desg_type
+                                  , rfc = rfc_club
+                                )
+                      , by = "desg"
+                    )
+                  }, error = function(e) {
+                     commitsdb %>% dplyr::tbl("clubs")   
+                  })
     
     actstbl  <- commitsdb %>% dplyr::tbl("acts") %>% 
                   left_join(tbl(commitsdb, "acts_catg"), by = 'act')
