@@ -11,13 +11,13 @@
 #' @import pool
 #' @import dplyr
 #' @import DBI
-#' @importFrom RMySQL MySQL
+#' @importFrom RMariaDB MariaDB
 #' @export
 
 initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', password = 'goBigBlue', ...) {
  
     # connect to the database
-    commitsdb  <- dbPool(RMySQL::MySQL(), dbname = db, host = host, user = user, password = password, ... )
+  commitsdb  <- dbPool(RMariaDB::MariaDB(), dbname = db, host = host, user = user, password = password, ... )
     
     # connect to the tables in the db
     committbl  <- commitsdb  %>% dplyr::tbl("commit")
