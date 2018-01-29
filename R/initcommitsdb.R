@@ -17,7 +17,7 @@
 initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', password = 'goBigBlue', ...) {
  
     # connect to the database
-  commitsdb  <- dbPool(RMariaDB::MariaDB(), dbname = db, host = host, user = user, password = password, ... )
+  commitsdb  <- dbPool(RMySQL::MySQL(), dbname = db, host = host, user = user, password = password, ... )
     
     # connect to the tables in the db
     committbl  <- commitsdb  %>% dplyr::tbl("commit")
