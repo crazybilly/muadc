@@ -11,7 +11,6 @@
 #' @import pool
 #' @import dplyr
 #' @import DBI
-#' @importFrom RMariaDB MariaDB
 #' @export
 
 initcommitsdb  <- function(db = 'commits', host = '10.40.9.145', user = 'adc', password = 'goBigBlue', ...) {
