@@ -27,18 +27,18 @@ clean.df <- function(df, keep.underscore = TRUE, pidmpattern = 'bannerid|banner_
   if( !is.null(pidmpattern) & !any(names(df) == 'pidm')  ) {
     
     n_pidmcols  <- sum(grepl(pidmpattern, names(df) ))
+    coltorename = names(df)[grepl(pidmpattern, names(df)) ]
     
     # don't rename if you have more than one matching col
     if( n_pidmcols > 1) {
       
       warning(n_pidmcols, " columns match pidmpattern regex: ", pidmpattern, ". Possible pidm columns not renamed.")
       
-    } else {
-      
-      coltorename = names(df)[grepl(pidmpattern, names(df)) ]
+    } else if  (n_pidmcols == 1) {
       
       message("Renaming ", coltorename, " to pidm ...")
-      dplyr::rename_at(df, dplyr::vars(matches(pidmpattern)), dplyr::funs(gsub(., ".*", "pidm")) )
+      df  <- dplyr::rename_at(df, dplyr::vars(matches(pidmpattern)), dplyr::funs(gsub(., ".*", "pidm")) )
+      
     }
     
   }
