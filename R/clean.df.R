@@ -1,14 +1,17 @@
 #' Clean the names of a data frame
 #' 
-#' Clean up a data frame by moving all column names to lower case, removing spaces and punctuation. Also, when dplyr is available, return the data frame as a tbl_df.
+#' Clean up a data frame by changing all column names to lower case, removing spaces and punctuation. 
 #' 
 #' @param df a data frame 
 #' @param keep.underscore a logical value indicating whether underscores be kept or removed
+#' @param pidmpattern a regular expression to be matched against the names of df. Set to `NULL` to turn off pattern mathing.
 #' 
-#' @return a data frame, or if dplyr is available, a tbl_df. 
+#' @details If no column named `pidm` is found and pidmpattern is not `NULL`, then we look if there's only 
+#' 
+#' @return a data frame of class tbl_df. 
 #' @export
 
-clean.df <- function(df, keep.underscore = TRUE) {
+clean.df <- function(df, keep.underscore = TRUE, pidmpattern = 'bannerid|banner_id') {
   
   if( keep.underscore) {
     # remove everything except alphanumeric and underscore
@@ -20,12 +23,28 @@ clean.df <- function(df, keep.underscore = TRUE) {
     
   names(df) <- tolower(names(df))
   
-  # if dplyr's already loaded, make the table a dplyr data_frame
-  #   if not, don't worry about it--it's only cosmetic anyway
-  if ("package:dplyr" %in% search() ) {
-    df  <- dplyr::tbl_df(df)
+  # if you don't have a column named pidm already, look for other bannerid and use that?
+  if( !is.null(pidmpattern) & !any(names(df) == 'pidm')  ) {
+    
+    n_pidmcols  <- sum(grepl(pidmpattern, names(df) ))
+    
+    # don't rename if you have more than one matching col
+    if( n_pidmcols > 1) {
+      
+      warning(n_pidmcols, " columns match pidmpattern regex: ", pidmpattern, ". Possible pidm columns not renamed.")
+      
+    } else {
+      
+      coltorename = names(df)[grepl(pidmpattern, names(df)) ]
+      
+      message("Renaming ", coltorename, " to pidm ...")
+      dplyr::rename_at(df, dplyr::vars(matches(pidmpattern)), dplyr::funs(gsub(., ".*", "pidm")) )
+    }
+    
   }
   
-  df
+  
+  dplyr::tbl_df(df)
   
 }
+

@@ -4,16 +4,21 @@
 \alias{clean.df}
 \title{Clean the names of a data frame}
 \usage{
-clean.df(df, keep.underscore = TRUE)
+clean.df(df, keep.underscore = TRUE, pidmpattern = "bannerid|banner_id")
 }
 \arguments{
 \item{df}{a data frame}
 
 \item{keep.underscore}{a logical value indicating whether underscores be kept or removed}
+
+\item{pidmpattern}{a regular expression to be matched against the names of df. Set to \code{NULL} to turn off pattern mathing.}
 }
 \value{
-a data frame, or if dplyr is available, a tbl_df.
+a data frame of class tbl_df.
 }
 \description{
-Clean up a data frame by moving all column names to lower case, removing spaces and punctuation. Also, when dplyr is available, return the data frame as a tbl_df.
+Clean up a data frame by changing all column names to lower case, removing spaces and punctuation.
+}
+\details{
+If no column named \code{pidm} is found and pidmpattern is not \code{NULL}, then we look if there's only
 }

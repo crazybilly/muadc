@@ -49,7 +49,7 @@ stackaddr  <- function(df, segment) {
   # all the single people
   singles  <- mail3 %>% 
     filter(
-      dupstatus == "single"      |
+        dupstatus == "single"      |
         dupstatus == "bulk inbox" 
     ) %>% 
     mutate(
@@ -66,12 +66,23 @@ stackaddr  <- function(df, segment) {
       , (primdnrind | (!segmentmatch & !primdnrind) )
     ) %>% 
     mutate(
-      envelopesal = ifelse(segmentmatch,     cmname, prefname      ) 
+        envelopesal = ifelse(segmentmatch,     cmname, prefname      ) 
       , lettersalformal = ifelse(segmentmatch,   frmp, frms          )
       , lettersalinformal = ifelse(segmentmatch, nckp, preffirstname )
     )
+ 
+  
+  morethan3  <- mail3 %>% 
+    filter(countcat > 3) %>% 
+    mutate(
+        `envelope 1` = prefname
+      , `letterformal 1` = frms
+      , `letterinformal 1` = preffirstname
+    )
+  
   
   tostack  <- mail3 %>% 
+    filter(countcat <= 3) %>% 
     filter( dupstatus == 'other family' | dupstatus == 'relationships unknown')  %>% 
     mutate( catkey = row_num)
   
@@ -105,9 +116,9 @@ stackaddr  <- function(df, segment) {
   
   # pull together -----------------------------------------------------------
   
-  bind_rows( singles, spouse, stacked, .id = 'type') %>% 
+  bind_rows( singles, spouse, stacked, morethan3, .id = 'type') %>% 
     mutate(
-      `envelope 1` = coalesce(envelopesal, `envelope 1`)
+        `envelope 1` = coalesce(envelopesal, `envelope 1`)
       , `letterformal 1` = coalesce(lettersalformal, `letterformal 1`)
       , `letterinformal 1` = coalesce(lettersalinformal, `letterinformal 1`)
     ) %>% 

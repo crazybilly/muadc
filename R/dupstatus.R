@@ -2,26 +2,29 @@
 
 # helper/mutate functions -----------------------------
 
+# this function is largely useless - just use paste
+# #' @title CatAdd
+# #'
+# #' @description Creates a concatenated address. Primarily for use in dplyr::mutate().
+# #' @param addr a referece to the address column
+# #' @param city a reference to the city column
+# #' @param st   a reference to the state column
+# #' @param zip  a reference to the zip code column
+# #' @param sep  a string to be used to seperate the columns
+# #' @return returns the 4 columns pasted together
+# #' @export
+# 
+# catadd <- function( addr = addr1, city = city, st = st, zip = zip, sep = ' ' ) {
+#   addq  <- enquo(addr)
+#   cityq <- enquo(city)
+#   stq   <- enquo(st)
+#   zipq  <- enquo(zip)
+#   
+#   paste(!!addq, !!cityq, !!stq, !!zipq, sep = sep)
+# }
+# 
+# 
 
-#' @title CatAdd
-#'
-#' @description Creates a concatenated address. Primarily for use in dplyr::mutate().
-#' @param addr a referece to the address column
-#' @param city a reference to the city column
-#' @param st   a reference to the state column
-#' @param zip  a reference to the zip code column
-#' @param sep  a string to be used to seperate the columns
-#' @return returns the 4 columns pasted together
-#' @export
-
-catadd <- function( addr = addr1, city = city, st = st, zip = zip, sep = ' ' ) {
-  addq  <- enquo(addr)
-  cityq <- enquo(city)
-  stq   <- enquo(st)
-  zipq  <- enquo(zip)
-  
-  paste(!!addq, !!cityq, !!stq, !!zipq, sep = sep)
-}
 
 #' @title Countif
 #' 
@@ -115,7 +118,7 @@ getrelationships  <- function(df, idcol = 'pidm', xrefslong = NULL ) {
   
   
   prepped  <- df  %>% 
-    mutate(   cataddr = catadd(addr1,city,st,zip)
+    mutate(   cataddr = paste(addr1,city,st,zip)
               , countcat = countif(cataddr)
     )   
   
@@ -184,7 +187,7 @@ dupstatus  <- function(df, dfxrefs = NA, xrefslong = NA, segmentcol = NA  ) {
   df  %>% 
     left_join(dfxrefs, by = 'pidm')  %>% 
     mutate(
-      cataddr = catadd(addr1,city,st,zip)
+        cataddr = paste(addr1,city,st,zip)
       , countcat = countif(cataddr)
       , bulkaddr = grepl(bulkmailaddresses,cataddr)
       , CH = replace(CH,is.na(CH),F)
