@@ -4,7 +4,8 @@
 \alias{clean.df}
 \title{Clean the names of a data frame}
 \usage{
-clean.df(df, keep.underscore = TRUE, pidmpattern = "bannerid|banner_id")
+clean.df(df, keep.underscore = TRUE,
+  pidmpattern = "bannerid|banner_id")
 }
 \arguments{
 \item{df}{a data frame}

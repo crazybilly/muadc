@@ -5,7 +5,8 @@
 \title{Apply Mail Exclusoins}
 \usage{
 apply.mail.exclusions(df, idcol = "pidm", primary.only = T,
-  include.students = F, sol = F, exclude.fall = F, exclude.spring = F)
+  include.students = F, sol = F, exclude.fall = F,
+  exclude.spring = F)
 }
 \arguments{
 \item{df}{A data frame to be used as a mailing list.}

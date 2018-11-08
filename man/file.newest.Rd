@@ -4,8 +4,8 @@
 \alias{file.newest}
 \title{Identify the Most Recently Edited File}
 \usage{
-file.newest(path = ".", pattern = NULL, invert = F, messagename = F,
-  ...)
+file.newest(path = ".", pattern = NULL, invert = F,
+  messagename = F, ...)
 }
 \arguments{
 \item{path}{a character vector of full path names; the default corresponds to the working directory, \code{getwd()}. Tilde expansion (see `path.expand``) is performed. Missing values will be ignored.}

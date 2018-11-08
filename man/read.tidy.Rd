@@ -4,7 +4,8 @@
 \alias{read.tidy}
 \title{Read csvs into tidy format}
 \usage{
-read.tidy(x = "clipboard", sep = "\\t", ifexists = F, existsname, ...)
+read.tidy(x = "clipboard", sep = "\\t", ifexists = F, existsname,
+  ...)
 }
 \arguments{
 \item{x}{the filename to load. Should be a csv. Defaults to reading from the clipboard.}

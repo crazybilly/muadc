@@ -4,10 +4,15 @@
 \alias{initcommitsdb}
 \title{Initialize my db connection}
 \usage{
-initcommitsdb(db = "commits", host = "10.40.9.145", user = "adc",
-  password = "goBigBlue", ...)
+initcommitsdb(odbc = "warehouse510c", mysqldb = "commits",
+  mysqlhost = "10.40.9.145", mysqluser = "adc",
+  mysqlpassword = "goBigBlue", ...)
 }
 \arguments{
+\item{odbc}{a string of an odbc connection to use. If NULL, database connects with credentials in mysql* arguments.}
+
+\item{...}{further arguments to pass to DBI::dbConnect}
+
 \item{db}{a string of the name of the database name with which you should connect. Defaults to the 'commits' db.}
 
 \item{host}{the hostname or ip address for the database server}
@@ -15,8 +20,6 @@ initcommitsdb(db = "commits", host = "10.40.9.145", user = "adc",
 \item{user}{the database username}
 
 \item{password}{the database password}
-
-\item{...}{further arguments to pass to DBI::dbConnect}
 }
 \value{
 Assigns a database connection, plus connections to the hallp, dnrc, desgs, commits, gifts, pledges and memos tables in the global environment.

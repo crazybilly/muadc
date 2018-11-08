@@ -4,7 +4,8 @@
 \alias{write.tidy}
 \title{write.tidy}
 \usage{
-write.tidy(x, file = "", row.names = FALSE, na = "", excel = F, ...)
+write.tidy(x, file = "", row.names = FALSE, na = "", excel = F,
+  ...)
 }
 \arguments{
 \item{x}{the object to be written, preferably a matrix or data frame. If not, it is attempted to coerce x to a data frame.}

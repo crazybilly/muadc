@@ -1,4 +1,4 @@
-#' See Outpout Directory
+#' See Output Directory
 #'
 #' @description Opens a Windows directory to the path given to the dir argument, by default, the output/ directory. If the given directory does not exist, a warning is thrown and the current working directory is opened.
 #' 
@@ -20,3 +20,7 @@ seeoutput  <- function( dir = 'output') {
   shell.exec(dir)
   
 }
+
+#' @inherit seeoutput
+#' @export
+seedata  <- function(d = 'data') { seeoutput(dir = d) }
