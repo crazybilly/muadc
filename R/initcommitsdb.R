@@ -1,27 +1,38 @@
 #' Initialize my db connection
 #' 
 #' a convinence function to connect to the commits database on localhost. 
+#' @param use what kind of database connection to use. Currently valid options include: `RMariaDB`, `odbc`, `mysql` and `pool`. RMariaDB is used by default. The pool option uses RMariaDB, but makes the connection with `pool::dbPool()` rather than `DBI::dbConnect()`.
 #' @param odbc a string of an odbc connection to use. If NULL, database connects with credentials in mysql* arguments.
-#' @param db a string of the name of the database name with which you should connect. Defaults to the 'commits' db.
-#' @param host the hostname or ip address for the database server
-#' @param user the database username 
-#' @param password the database password
+#' @param mysqldb a string of the name of the database name with which you should connect. Defaults to the 'commits' db.
+#' @param mysqlhost the hostname or ip address for the database server
+#' @param mysqluser the database username 
+#' @param mysqlpassword the database password
 #' @param ... further arguments to pass to DBI::dbConnect
 #' 
 #' @return Assigns a database connection, plus connections to the hallp, dnrc, desgs, commits, gifts, pledges and memos tables in the global environment.
 #' @import dplyr
 #' @import DBI
 #' @import odbc
+#' @import pool
+#' @import RMySQL
+#' @import RMariaDB
 #' @export
 
-initcommitsdb  <- function(odbc = 'warehouse510c', mysqldb = 'commits', mysqlhost = '10.40.9.145', mysqluser = 'adc', mysqlpassword = 'goBigBlue', ...) {
+initcommitsdb  <- function(use = 'RMariaDB', odbc = 'warehouse510c', mysqldb = 'commits', mysqlhost = '10.40.9.145', mysqluser = 'adc', mysqlpassword = 'goBigBlue', ...) {
  
-    # connect to the database
+  # connect to the database
+  use  <-  str_to_lower(use)
   
-  if(is.null(odbc)) {
-    commitsdb  <- dbConnect(RMariaDB::MariaDB(), dbname = mysqldb, host = mysqlhost, user = mysqluser, password = mysqlpassword, bigint = 'numeric', ... )
+  if(use == 'rmariadb') {
+    commitsdb  <- DBI::dbConnect(RMariaDB::MariaDB(), dbname = mysqldb, host = mysqlhost, user = mysqluser, password = mysqlpassword, bigint = 'numeric', ... )
+  } else if(use == 'odbc') {
+    commitsdb  <- DBI::dbConnect(odbc::odbc(), odbc, timeout = 10, bigint = 'numeric')
+  } else if(use == 'pool') {
+    commitsdb  <- pool::dbPool(RMariaDB::MariaDB(), dbname = mysqldb, host = mysqlhost, user = mysqluser, password = mysqlpassword, bigint = 'numeric', ... )
+  } else if(use == 'mysql') {
+    commitsdb  <- DBI:: dbConnect(RMySQL::MySQL(), dbname = mysqldb, host = mysqlhost, user = mysqluser, password = mysqlpassword, bigint = 'numeric', ... )
   } else {
-    commitsdb  <- dbConnect(odbc::odbc(), odbc, timeout = 10, bigint = 'numeric')
+    error('Specify which connection type should be used in the `use` argument. Valid options include: `RMariaDB`, `odbc`, `mysql` and `pool`.')
   }
     
     # connect to the tables in the db
