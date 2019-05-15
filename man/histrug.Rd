@@ -4,10 +4,12 @@
 \alias{histrug}
 \title{Plot a histogram with a rug}
 \usage{
-histrug(x)
+histrug(df, col)
 }
 \arguments{
-\item{x}{a numeric vector to plot}
+\item{df}{either a data frame containing the column to be plotted, or a numeric vector to plot}
+
+\item{col}{if df is not null, then the unquoted name of a column in df to plot}
 }
 \description{
 a convience wrapper to put a rug underneath a histogram. Also calls muplot for formatting tweaks

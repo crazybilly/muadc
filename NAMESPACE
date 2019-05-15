@@ -3,6 +3,7 @@
 export(addspouses)
 export(apply.email.exclusions)
 export(apply.mail.exclusions)
+export(appstdi_to_df)
 export(as.currency)
 export(as.data.frame_named.vector)
 export(as.percent)
