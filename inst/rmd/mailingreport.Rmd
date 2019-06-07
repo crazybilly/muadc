@@ -1,0 +1,93 @@
+---
+title: "Mailing List Report"
+author: "Jake Tolbert"
+date: "6/5/2019"
+output: html_document
+params:
+    allinfo:
+      value: x
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+
+# libraries -------------------------------------------
+
+library(lubridate); library(beepr)
+library(tidyverse); library(muadc); library(magrittr)
+library(readxl); library(rlang)
+library(formattable); library(fundRaising);
+library(knitr); library(kableExtra)
+
+# data ------------------------------------------------
+
+if( !exists("lastinit") || lastinit < (now() - seconds(3) ) ) {
+  initcommitsdb()
+  lastinit  <- now()
+}
+
+
+mykable  <- function(df, ...) {
+  kable_styling(df
+  , bootstrap_options = c("striped", "hover", "condensed", "responsive")
+  , position = "left"
+  , ...
+ )
+}
+
+
+
+```
+<style>
+  .title { font-weight: bold; font-size: 1.8em;}
+</style>
+
+
+<div class = "row">
+
+<div class = 'col'>
+<span class = 'title'>Summary</span>
+```{r}
+params$allinfo$thenumbers
+```
+</div>
+</div>
+<div class = "row">
+<div class = 'col-md-4'>
+<span class = 'title'>Donor Codes</span>
+```{r}
+knitr::kable(params$allinfo$count_primdnrc) %>% 
+  mykable()
+```
+</div>
+<div class = 'col-md-4'>
+<span class = 'title'>Assigned Prospects</span>
+```{r}
+knitr::kable(params$allinfo$count_solc) %>% 
+  mykable()
+```
+</div>
+<div class = 'col-md-4'>
+<span class = 'title'>Repeated Addresses</span>
+```{r}
+knitr::kable(params$allinfo$count_cataddr_n) %>% 
+  mykable()
+```
+</div>
+</div>
+
+<div class = 'row'>
+<div class = 'col-md-6'>
+```{r echo=FALSE, warning=FALSE}
+params$allinfo$hist_classyr
+```
+</div>
+<div class = 'col-md-6'>
+
+```{r echo=FALSE, warning=FALSE}
+params$allinfo$hist_st
+```
+
+</div>
+</div>
