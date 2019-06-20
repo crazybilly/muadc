@@ -17,7 +17,7 @@ appstdi_to_df   <- function(appstdi) {
     stringr::str_split("  ", simplify = T) %>% 
     dplyr::as_tibble(.name_repair = ~c("pidm", "name"))
   
-  actionrows  <- appstdi_orig[actionrowsi]
+  actionrows  <- appstdi[actionrowsi]
   
   action  <- actionrows %>% 
     stringr::str_replace("^\\s+(...).*", "\\1")
