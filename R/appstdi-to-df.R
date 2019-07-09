@@ -33,7 +33,7 @@ appstdi_to_df   <- function(appstdi) {
   namerows$dnrc    <- dnrc
   namerows$classyr <- classyr
   
-  return(namerows)
-  
+  namerows %>% 
+    mutate(pidm = rlang::as_integer(as.numeric(pidm)) )
   
 }
