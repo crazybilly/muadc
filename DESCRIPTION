@@ -20,5 +20,8 @@ Imports:
     readr,
     DBI,
     RMySQL,
-    pool
+    pool,
+    RMariaDB,
+    formattable,
+    odbc
 RoxygenNote: 6.1.1
