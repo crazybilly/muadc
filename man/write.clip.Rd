@@ -4,8 +4,15 @@
 \alias{write.clip}
 \title{Write data to the clipboard}
 \usage{
-write.clip(x, size = "4096", sep = "\\t", na = "", row.names = F,
-  excel = F, ...)
+write.clip(
+  x,
+  size = "4096",
+  sep = "\\t",
+  na = "",
+  row.names = F,
+  excel = F,
+  ...
+)
 }
 \arguments{
 \item{x}{an object to write}

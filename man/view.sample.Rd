@@ -4,8 +4,14 @@
 \alias{view.sample}
 \title{view.sample}
 \usage{
-view.sample(x, title, transpose = TRUE, sample.n = 3,
-  sample.method = "head", stdout = FALSE)
+view.sample(
+  x,
+  title,
+  transpose = TRUE,
+  sample.n = 3,
+  sample.method = "head",
+  stdout = FALSE
+)
 }
 \arguments{
 \item{x}{an object to view. view.sample() is designed to work best with data frames but will work with vectors as well.}

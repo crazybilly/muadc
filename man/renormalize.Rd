@@ -4,8 +4,14 @@
 \alias{renormalize}
 \title{renormalize}
 \usage{
-renormalize(x, idcol, listcol, sep = ",", listcolname = "normalized",
-  na.replace = "")
+renormalize(
+  x,
+  idcol,
+  listcol,
+  sep = ",",
+  listcolname = "normalized",
+  na.replace = ""
+)
 }
 \arguments{
 \item{x}{a datafame to analyze}

@@ -9,7 +9,7 @@ count_in(x, y, by = NULL)
 \arguments{
 \item{x, }{y tbls to compare}
 
-\item{by}{a character vector of variables to join by. If \code{NULL}, the default, \code{*_join()} will do a natural join, using all variables with common names across the two tables}
+\item{by}{a character vector of variables to join by. If \code{NULL}, the default, \verb{*_join()} will do a natural join, using all variables with common names across the two tables}
 }
 \value{
 a 3 row data frame with the number of ID variables that are in x but not in y, number in both, and number that are in y but not in x.

@@ -4,9 +4,15 @@
 \alias{initcommitsdb}
 \title{Initialize my db connection}
 \usage{
-initcommitsdb(use = "RMariaDB", odbc = "warehouse510c",
-  mysqldb = "commits", mysqlhost = "10.40.9.145", mysqluser = "adc",
-  mysqlpassword = "goBigBlue", ...)
+initcommitsdb(
+  use = "RMariaDB",
+  odbc = "warehouse510c",
+  mysqldb = "commits",
+  mysqlhost = "10.40.9.145",
+  mysqluser = "adc",
+  mysqlpassword = "goBigBlue",
+  ...
+)
 }
 \arguments{
 \item{use}{what kind of database connection to use. Currently valid options include: \code{RMariaDB}, \code{odbc}, \code{mysql} and \code{pool}. RMariaDB is used by default. The pool option uses RMariaDB, but makes the connection with \code{pool::dbPool()} rather than \code{DBI::dbConnect()}.}

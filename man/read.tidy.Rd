@@ -4,8 +4,7 @@
 \alias{read.tidy}
 \title{Read csvs into tidy format}
 \usage{
-read.tidy(x = "clipboard", sep = "\\t", ifexists = F, existsname,
-  ...)
+read.tidy(x = "clipboard", sep = "\\t", ifexists = F, existsname, ...)
 }
 \arguments{
 \item{x}{the filename to load. Should be a csv. Defaults to reading from the clipboard.}
@@ -16,25 +15,26 @@ read.tidy(x = "clipboard", sep = "\\t", ifexists = F, existsname,
 
 \item{existsname}{what object should the function look for, assuming ifexists = T. If ifexists == T and existname is not empty, the function will return the object with name = existsname.}
 
-\item{...}{Arguments passed on to \code{utils::read.csv}
-\describe{
-  \item{header}{a logical value indicating whether the file contains the
+\item{...}{
+  Arguments passed on to \code{\link[utils:read.csv]{utils::read.csv}}
+  \describe{
+    \item{\code{header}}{a logical value indicating whether the file contains the
     names of the variables as its first line.  If missing, the value is
     determined from the file format: \code{header} is set to \code{TRUE}
     if and only if the first row contains one fewer field than the
     number of columns.}
-  \item{quote}{the set of quoting characters. To disable quoting
+    \item{\code{quote}}{the set of quoting characters. To disable quoting
     altogether, use \code{quote = ""}.  See \code{\link{scan}} for the
     behaviour on quotes embedded in quotes.  Quoting is only considered
     for columns read as character, which is all of them unless
     \code{colClasses} is specified.}
-  \item{dec}{the character used in the file for decimal points.}
-  \item{fill}{logical. If \code{TRUE} then in case the rows have unequal
+    \item{\code{dec}}{the character used in the file for decimal points.}
+    \item{\code{fill}}{logical. If \code{TRUE} then in case the rows have unequal
     length, blank fields are implicitly added.  See \sQuote{Details}.}
-  \item{comment.char}{character: a character vector of length one
+    \item{\code{comment.char}}{character: a character vector of length one
     containing a single character or an empty string.  Use \code{""} to
     turn off the interpretation of comments altogether.}
-}}
+  }}
 }
 \value{
 Returns a data frame will lower cased names and all punctuation removed. If dplyr is already loaded, it returns a data frame as a tbl_df--otherwise, it returns a simple data frame.
