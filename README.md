@@ -1,7 +1,7 @@
 muadc
 =====
 
-an R package with everyday functions for my job.
+an R package with everyday functions for my job at Millikin. This package has been superceded by [ucbudar](http://github.com/crazybilly/ucbudar), as I no longer work at Millikin.
 
 ## Variables
 
